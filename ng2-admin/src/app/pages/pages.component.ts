@@ -16,7 +16,7 @@ import { PAGES_MENU } from './pages.menu';
       </div>
     </div>
     <footer class="al-footer clearfix">
-      
+      Test
     </footer>
     <ba-back-top position="200"></ba-back-top>
     `
