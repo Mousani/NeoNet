@@ -31,7 +31,7 @@ import { ContactsService } from './components/contacts/contacts.service';
     DataFilterPipe,
   ],
   providers: [
-    ContactsService
+    ContactsService,
   ]
 })
 export class ModulesModule {

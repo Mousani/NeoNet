@@ -55,7 +55,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.forecasting',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-line-chart',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -67,7 +67,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.invoices',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-list-alt',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -79,7 +79,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.jobs',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-briefcase',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -91,7 +91,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.managerial_tasks',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-tasks',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -103,7 +103,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.parts',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-cogs',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -127,7 +127,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.purchase_orders',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-shopping-cart',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -139,7 +139,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.quotes',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-file-o',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -151,7 +151,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.subcontract_orders',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-shopping-bag',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -163,7 +163,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.timecards',
-                icon: 'ion-gear-a',
+                icon: 'fa fa-calendar',
                 selected: false,
                 expanded: false,
                 order: 250,
@@ -175,7 +175,7 @@ export const PAGES_MENU = [
             data: {
               menu: {
                 title: 'general.menu.my_employee_page',
-                icon: 'fa fa-user-o',
+                icon: 'fa fa-users',
                 selected: false,
                 expanded: false,
                 order: 250,
