@@ -14,6 +14,8 @@ export class Contacts {
     sortBy = "email";
     sortOrder = "asc";
     count = 1;
+    addNew = false;
+
     
 
     constructor(private service: ContactsService) {

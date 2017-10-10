@@ -14,6 +14,10 @@ import { Modules } from './modules.component';
 import { Contacts } from './components/contacts/contacts.component';
 import { ContactsService } from './components/contacts/contacts.service';
 
+import { InlineForm } from './components/contacts/components/inlineForm';
+
+
+
 
 @NgModule({
   imports: [
@@ -29,6 +33,7 @@ import { ContactsService } from './components/contacts/contacts.service';
     Modules,
     Contacts,
     DataFilterPipe,
+    InlineForm,
   ],
   providers: [
     ContactsService,
