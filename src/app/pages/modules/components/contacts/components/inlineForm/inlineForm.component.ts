@@ -19,7 +19,10 @@ export class InlineForm {
 		console.log(this.addNew)
 	}
 
-	titles = [{
+
+	contact = {};
+	titles = [
+		{
 		"code": 1,
 		"name": "Mr"
 	},
