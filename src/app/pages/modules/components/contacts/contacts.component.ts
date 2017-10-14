@@ -28,6 +28,7 @@ export class Contacts {
     // }).catch(function(e) {
     //   console.log(e); // "oh, no!"
     // });
+    
   }
 
     toInt(num: string) {

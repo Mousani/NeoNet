@@ -19,8 +19,52 @@ export class InlineForm {
 		console.log(this.addNew)
 	}
 
+	submitContact() {
+		console.log(this.contact);
+	}
 
-	contact = {};
+
+	contact = {
+		"dbDate": "",
+		"dbLastName": "",
+		"dbFirstName": "",
+		"dbCompany": "",
+		"dbTitle": "",
+		"dbBusinessTitle": "",
+		"dbPrimaryEmail": "",
+		"dbSecondaryEmail": "",
+		"dbWebAddress": "",
+		"dbAddNotes": "",
+		"dbSource": "",
+		"dbCheck": "",
+		"dbMailingLabel": "",
+		"dbPassword": "",
+		"dbSecurityQuestion": "",
+		"dbSecurityAnswer": "",
+		"dbRegistrationComplete": "",
+		"dbHowFind": "",
+		"dbWebLook": "",
+		"dbWantRec": "",
+		"dbWantCom": "",
+		"dbWantRes": "",
+		"dbWhereUse": "",
+		"dbVehicles": "",
+		"dbHowMuch": "",
+		"dbSelfAssembly": "",
+		"dbNeoAssembly": "",
+		"dbOtherComments": "",
+		"dbHowInterest": "",
+		"dbUsr": "",
+		"dbIP": "",
+		"dbPhone": "",
+		"dbAddress": "",
+		"dbCity": "",
+		"dbState": "",
+		"dbCountry": "",
+		"dbZip": "",
+		"dbType": "",
+		"dbContactsCompany": ""
+	};
 	titles = [
 		{
 		"code": 1,
