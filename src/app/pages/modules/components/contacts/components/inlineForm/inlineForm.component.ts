@@ -23,6 +23,11 @@ export class InlineForm {
 		console.log(this.contact);
 	}
 
+	contactsCompanyList : [
+		"Neoteric Hovercraft, Inc",
+		"Hovertechnics, LLC"
+	];
+
 
 	contact = {
 		"dbDate": "",
@@ -63,8 +68,10 @@ export class InlineForm {
 		"dbCountry": "",
 		"dbZip": "",
 		"dbType": "",
-		"dbContactsCompany": ""
+		"dbContactsCompany": "Neoteric Hovercraft, Inc"
 	};
+
+	
 	titles = [
 		{
 		"code": 1,
@@ -864,6 +871,7 @@ export class InlineForm {
 
 
 	constructor() {
+		this.contact.dbContactsCompany = "Neoteric Hovercraft, Inc";
 	}
 
 	isRemember: boolean = false;

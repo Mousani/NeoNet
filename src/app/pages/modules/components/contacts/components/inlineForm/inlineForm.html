@@ -4,8 +4,9 @@
       <div class="form-group col-sm-3">
         <label for="input01">Contacts Company</label>
         <select class="form-control" [(ngModel)]="contact.dbContactsCompany" name="dbContactsCompany">
-            <option value="Neoteric Hovercraft, Inc" title="" id="">Neoteric Hovercraft, Inc</option>
+            <option value="Neoteric Hovercraft, Inc" [selected]>Neoteric Hovercraft, Inc</option>
             <option value="Hovertechnics, LLC" title="" id="">Hovertechnics, LLC</option>
+            <option *ngFor="let contactsCompany of contactsCompanyList"  [value]="contactsCompany">{{ contactsCompanyItem }}</option>                
         </select>
       </div>
     </div>
@@ -13,8 +14,7 @@
         <div class="form-group col-sm-3">
           <label>Title</label>
           <select class="form-control" [(ngModel)]="contact.dbTitle" name="dbTitle">
-          <option value="" selected="SELECTED" title="" id=""></option>
-          <option *ngFor="let title of titles" [value]="title.code">{{ title.name }}</option>                
+          <option *ngFor="let title of titles"   [selected]="title.code==1"  [value]="title.code">{{ title.name }}</option>                
         </select>
         </div>
         
@@ -72,38 +72,38 @@
         <div class="form-group col-sm-2">
           <div class="checkbox">
             <label for="input01"> </label>
-            <ba-checkbox [(ngModel)]="contact.dbWebLook"  [label]="'Want Look'" ngTrueValue="Y" name="dbWebLook"></ba-checkbox>
+            <ba-checkbox [(ngModel)]="contact.dbWebLook" [ngModel]="contact.dbWebLook == 'Y'" (ngModelChange)="contact.dbWebLook=$event?'Y':'N'" [label]="'Web Look'" name="dbWebLook"></ba-checkbox>
           </div>
         </div>
         <div class="form-group col-sm-2">
           <div class="checkbox">
             <label for="input01"> </label>
-            <ba-checkbox [(ngModel)]="contact.dbWantRec"  [label]="'Want Rec'" name="dbWantRec"></ba-checkbox>
+            <ba-checkbox [(ngModel)]="contact.dbWantRec" [ngModel]="contact.dbWantRec == 'Y'" (ngModelChange)="contact.dbWantRec=$event?'Y':'N'" [label]="'Want Rec'" name="dbWantRec"></ba-checkbox>
           </div>
         </div>
         <div class="form-group col-sm-2">
           <div class="checkbox">
             <label for="input01"> </label>
-            <ba-checkbox [(ngModel)]="contact.dbWantCom"  [label]="'Want com'" name="dbWantCom"></ba-checkbox>
+            <ba-checkbox [(ngModel)]="contact.dbWantCom" [ngModel]="contact.dbWantCom == 'Y'" (ngModelChange)="contact.dbWantCom=$event?'Y':'N'" [label]="'Want com'" name="dbWantCom"></ba-checkbox>
           </div>
         </div>
         <div class="form-group col-sm-2">
           <div class="checkbox">
             <label for="input01"> </label>
-            <ba-checkbox [(ngModel)]="contact.dbWantRes"  [label]="'Want Res'" name="dbWantRes"></ba-checkbox>
+            <ba-checkbox [(ngModel)]="contact.dbWantRes" [ngModel]="contact.dbWantRes == 'Y'" (ngModelChange)="contact.dbWantRes=$event?'Y':'N'" [label]="'Want Res'" name="dbWantRes"></ba-checkbox>
           </div>
         </div>
         <div class="form-group col-sm-2">
           <div class="checkbox">
             <label for="input01"> </label>
-            <ba-checkbox [(ngModel)]="contact.dbSelfAssembly"  [label]="'Self Assembly'" name="dbSelfAssembly"></ba-checkbox>
+            <ba-checkbox [(ngModel)]="contact.dbSelfAssembly" [ngModel]="contact.dbSelfAssembly == 'Y'" (ngModelChange)="contact.dbSelfAssembly=$event?'Y':'N'" [label]="'Self Assembly'" name="dbSelfAssembly"></ba-checkbox>
           </div>
         </div>
         <div class="form-group col-sm-2">
           <div class="checkbox">
             <label for="input01"> </label>
-            <ba-checkbox [(ngModel)]="contact.dbNeoAssembly"  [label]="'Neo Assembly'" name="dbNeoAssembly"></ba-checkbox>
-          </div>t
+            <ba-checkbox [(ngModel)]="contact.dbNeoAssembly" [ngModel]="contact.dbNeoAssembly == 'Y'" (ngModelChange)="contact.dbNeoAssembly=$event?'Y':'N'" [label]="'Neo Assembly'" name="dbNeoAssembly"></ba-checkbox>
+          </div>
         </div>
       </div>
 
