@@ -14,6 +14,9 @@ import { Modules } from './modules.component';
 import { Contacts } from './components/contacts/contacts.component';
 import { ContactsService } from './components/contacts/contacts.service';
 
+import { Costing } from './components/costing/costing.component';
+import { CostingService } from './components/costing/costing.service';
+
 import { InlineForm } from './components/contacts/components/inlineForm';
 
 
@@ -32,11 +35,13 @@ import { InlineForm } from './components/contacts/components/inlineForm';
   declarations: [
     Modules,
     Contacts,
+    Costing,
     DataFilterPipe,
     InlineForm,
   ],
   providers: [
     ContactsService,
+    CostingService,
   ]
 })
 export class ModulesModule {

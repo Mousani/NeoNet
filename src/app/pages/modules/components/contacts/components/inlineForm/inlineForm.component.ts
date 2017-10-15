@@ -19,8 +19,59 @@ export class InlineForm {
 		console.log(this.addNew)
 	}
 
+	submitContact() {
+		console.log(this.contact);
+	}
 
-	contact = {};
+	contactsCompanyList : [
+		"Neoteric Hovercraft, Inc",
+		"Hovertechnics, LLC"
+	];
+
+
+	contact = {
+		"dbDate": "",
+		"dbLastName": "",
+		"dbFirstName": "",
+		"dbCompany": "",
+		"dbTitle": "",
+		"dbBusinessTitle": "",
+		"dbPrimaryEmail": "",
+		"dbSecondaryEmail": "",
+		"dbWebAddress": "",
+		"dbAddNotes": "",
+		"dbSource": "",
+		"dbCheck": "",
+		"dbMailingLabel": "",
+		"dbPassword": "",
+		"dbSecurityQuestion": "",
+		"dbSecurityAnswer": "",
+		"dbRegistrationComplete": "",
+		"dbHowFind": "",
+		"dbWebLook": "",
+		"dbWantRec": "",
+		"dbWantCom": "",
+		"dbWantRes": "",
+		"dbWhereUse": "",
+		"dbVehicles": "",
+		"dbHowMuch": "",
+		"dbSelfAssembly": "",
+		"dbNeoAssembly": "",
+		"dbOtherComments": "",
+		"dbHowInterest": "",
+		"dbUsr": "",
+		"dbIP": "",
+		"dbPhone": "",
+		"dbAddress": "",
+		"dbCity": "",
+		"dbState": "",
+		"dbCountry": "",
+		"dbZip": "",
+		"dbType": "",
+		"dbContactsCompany": "Neoteric Hovercraft, Inc"
+	};
+
+	
 	titles = [
 		{
 		"code": 1,
@@ -820,6 +871,7 @@ export class InlineForm {
 
 
 	constructor() {
+		this.contact.dbContactsCompany = "Neoteric Hovercraft, Inc";
 	}
 
 	isRemember: boolean = false;

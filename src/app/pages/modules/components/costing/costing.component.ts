@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactsService } from './contacts.service';
+import { CostingService } from './costing.service';
 
 @Component({
-  selector: 'contacts',
-  templateUrl: './contacts.html',
-  styleUrls: ['./contacts.scss']
+  selector: 'costing',
+  templateUrl: './costing.html',
+  styleUrls: ['./costing.scss']
 })
-export class Contacts {
+export class Costing {
 
     data = [];
     filterQuery = "";
@@ -18,7 +18,7 @@ export class Contacts {
 
     
 
-    constructor(private service: ContactsService) {
+    constructor(private service: CostingService) {
       this.service.getData().subscribe((data) => {
         this.data = data;
       });;
