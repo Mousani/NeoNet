@@ -19,7 +19,7 @@ export class CostingService {
 //   }
 
   getData() {
-	return this.http.get("./assets/json/contacts.json")
+	return this.http.get("./assets/json/costing.json")
         .map((res:Response) => this.dataTableData = res.json()); //records in this case
   }
 
