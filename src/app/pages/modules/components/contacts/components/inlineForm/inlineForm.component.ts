@@ -23,9 +23,25 @@ export class InlineForm {
 		console.log(this.contact);
 	}
 
+	
+
 	contactsCompanyList : [
 		"Neoteric Hovercraft, Inc",
 		"Hovertechnics, LLC"
+	];
+
+	address = [
+		{
+			"dbAddressLabel": "",
+            "dbAddress": "",
+            "dbCity": "",
+            "dbZip": "",
+            "dbCountry": "",
+            "dbAddressType": "",
+            "dbTitle": "",
+            "dbFirstName": "",
+            "dbLastName": "",
+        },
 	];
 
 

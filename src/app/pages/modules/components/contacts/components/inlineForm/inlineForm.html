@@ -106,6 +106,24 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="form-group col-sm-3">
+          <label for="input01">Address Label</label>
+          <input type="text" class="form-control" [(ngModel)]="contact.dbWebAddress" name="dbWebAddress1">
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="input01">Name</label>
+          <input type="text" class="form-control" [(ngModel)]="contact.dbWebAddress" name="dbWebAddress2">
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="input01">Full Address</label>
+          <input type="text" class="form-control" [(ngModel)]="contact.dbWebAddress" name="dbWebAddress3">
+        </div>
+        <div class="form-group col-sm-3">
+          <label for="input01">Associated Phones</label>
+          <input type="text" class="form-control" [(ngModel)]="contact.dbWebAddress" name="dbWebAddress4">
+        </div>
+      </div>
 
       <div class="row">
 
@@ -124,4 +142,12 @@
 </div>
 </div>
 </ba-card>
+<!-- <ba-card>
+  <div class="task-todo-container">
+    <input type="text" value="" class="form-control task-todo" placeholder="Address"  [(ngModel)]="newTodoText" name="newTodoText"/>
+    <i  class="add-item-icon ion-plus-round"></i>
+    <i  class="add-item-icon ion-edit-round"></i>
+    <div class="box-shadow-border"></div>
+  </div>
+</ba-card> -->
 </form>

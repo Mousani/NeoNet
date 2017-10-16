@@ -79,10 +79,10 @@
                             <!--<td>
                                 <button (click)="remove(item)" class="btn btn-danger">x</button>
                             </td>-->
-                            <td>{{item.dbContactNumber}}</td>
-                            <td>{{item.dbName}}</td>
-                            <td>{{item.dbCompany}}</td>
-                            <td >{{item.dbPrimaryEmail}}</td>
+                            <td><a href="JavaScript:void(0);"  (click)="setContact(item)">{{item.dbContactNumber}}</a></td>
+                            <td><a  href="JavaScript:void(0);"  (click)="setContact(item)">{{item.dbName}}</a></td>
+                            <td><a  href="JavaScript:void(0);"  (click)="setContact(item)">{{item.dbCompany}}</a></td>
+                            <td ><a  href="JavaScript:void(0);"  (click)="setContact(item)">{{item.dbPrimaryEmail}}</a></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -99,4 +99,12 @@
         
     </div>
     <inline-form [hidden]="!addNew" [(addNew)]="addNew"></inline-form>
+    <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <ba-card cardTitle="Contact Details" baCardClass="with-scroll table-panel">
+            <view-contact [(contact)]="contact"></view-contact>
+          </ba-card>
+        </div>
+      </div>
+    
 </div>

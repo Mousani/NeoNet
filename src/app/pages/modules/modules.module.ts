@@ -19,6 +19,8 @@ import { CostingService } from './components/costing/costing.service';
 
 import { InlineForm } from './components/contacts/components/inlineForm';
 
+import { ViewContact } from './components/contacts/components/viewContact';
+
 
 
 
@@ -38,6 +40,7 @@ import { InlineForm } from './components/contacts/components/inlineForm';
     Costing,
     DataFilterPipe,
     InlineForm,
+    ViewContact,
   ],
   providers: [
     ContactsService,

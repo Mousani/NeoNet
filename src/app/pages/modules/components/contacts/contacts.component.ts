@@ -16,7 +16,12 @@ export class Contacts {
     count = 1;
     addNew = false;
 
-    
+    public setContact = (contact) => {  
+      console.log(contact);
+      this.contact = contact;
+    }
+
+    contact = {};
 
     constructor(private service: ContactsService) {
       this.service.getData().subscribe((data) => {
