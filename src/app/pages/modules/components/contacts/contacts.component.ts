@@ -15,8 +15,15 @@ export class Contacts {
     sortOrder = "asc";
     count = 1;
     addNew = false;
+    viewContactStatus = false;
 
-    
+    public setContact = (contact) => {  
+      console.log(contact);
+      this.viewContactStatus = true;
+      this.contact = contact;
+    }
+
+    contact = {};
 
     constructor(private service: ContactsService) {
       this.service.getData().subscribe((data) => {
