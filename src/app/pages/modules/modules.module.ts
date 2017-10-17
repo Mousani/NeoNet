@@ -21,6 +21,7 @@ import { InlineForm } from './components/contacts/components/inlineForm';
 
 import { ViewContact } from './components/contacts/components/viewContact';
 
+import { KeysPipe } from './components/contacts/components/viewContact/keys.pipe';
 
 
 
@@ -41,6 +42,7 @@ import { ViewContact } from './components/contacts/components/viewContact';
     DataFilterPipe,
     InlineForm,
     ViewContact,
+    KeysPipe,
   ],
   providers: [
     ContactsService,

@@ -13,15 +13,21 @@
     </tr>
     </thead> -->
     <tbody>
-    <tr class="no-top-border">
-      <td >{{contact | json}}</td>
-      <!-- <td class="align-right"></td>
+      <tr class="no-top-border">
+
+        <!-- <td class="align-right"></td>
       <td class="table-arr" ngClass="nowrap"><i [ngClass]="{'icon-up': item.isVisitsUp, 'icon-down': !item.isVisitsUp }"></i></td>
       <td class="align-right">{{item.purchases}}</td>
       <td class="table-arr"><i [ngClass]="{'icon-up': item.isPurchasesUp, 'icon-down': !item.isPurchasesUp }"></i></td>
       <td class="align-right">{{item.percent}}</td>
       <td class="table-arr"><i [ngClass]="{'icon-up': item.isPercentUp, 'icon-down': !item.isPercentUp }"></i></td> -->
-    </tr>
+      </tr>
+
+      <tr *ngFor="let entry of contact | keys" [hidden]="!entry.value" class="no-top-border">
+        <td></td>
+        <td class="td-key">{{labels[entry.key]}} :</td>
+        <td class="td-value">{{parseValue(entry.value)}}</td>
+      </tr>
     </tbody>
   </table>
 </div>

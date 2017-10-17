@@ -6,6 +6,7 @@ import {Component, Input} from '@angular/core';
 })
 export class BaCard {
   @Input() cardTitle:String;
+  @Input() rightIcon:String;
   @Input() baCardClass:String;
   @Input() cardType:String;
 }
