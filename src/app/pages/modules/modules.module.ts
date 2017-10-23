@@ -23,6 +23,9 @@ import { ViewContact } from './components/contacts/components/viewContact';
 
 import { KeysPipe } from './components/contacts/components/viewContact/keys.pipe';
 
+import { Invoices } from './components/invoices/invoices.component';
+import { InvoicesService } from './components/invoices/invoices.service';
+
 
 
 @NgModule({
@@ -43,10 +46,12 @@ import { KeysPipe } from './components/contacts/components/viewContact/keys.pipe
     InlineForm,
     ViewContact,
     KeysPipe,
+    Invoices,
   ],
   providers: [
     ContactsService,
     CostingService,
+    InvoicesService,
   ]
 })
 export class ModulesModule {
