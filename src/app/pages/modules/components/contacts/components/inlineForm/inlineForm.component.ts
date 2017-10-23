@@ -21,6 +21,8 @@ export class InlineForm {
 
 	submitContact() {
 		console.log(this.contact);
+		console.log(this.address);
+		
 	}
 
 	

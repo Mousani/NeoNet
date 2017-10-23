@@ -23,4 +23,10 @@ export class ContactsService {
         .map((res:Response) => this.dataTableData = res.json()); //records in this case
   }
 
+  getAddress(contactNumber) {
+    return this.http.get("./assets/json/contactAddresses.json")
+          .map((res:Response) => res.json())
+          .map(address => address.filter(addressObj => addressObj.dbContactNumber === contactNumber));
+  }
+
 }

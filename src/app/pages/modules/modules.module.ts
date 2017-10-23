@@ -20,6 +20,7 @@ import { CostingService } from './components/costing/costing.service';
 import { InlineForm } from './components/contacts/components/inlineForm';
 
 import { ViewContact } from './components/contacts/components/viewContact';
+import { ViewAddress } from './components/contacts/components/viewAddress';
 
 import { KeysPipe } from './components/contacts/components/viewContact/keys.pipe';
 
@@ -45,6 +46,7 @@ import { InvoicesService } from './components/invoices/invoices.service';
     DataFilterPipe,
     InlineForm,
     ViewContact,
+    ViewAddress,
     KeysPipe,
     Invoices,
   ],
