@@ -16,11 +16,21 @@ export class Contacts {
     count = 1;
     addNew = false;
     viewContactStatus = false;
+    addressOfContact = [];
+    address = {};
 
     public setContact = (contact) => {  
       console.log(contact);
       this.viewContactStatus = true;
       this.contact = contact;
+      this.service.getAddress(contact.dbContactNumber).subscribe((address) => {
+        console.log("address ",address);
+        this.addressOfContact = address;
+      });
+    }
+
+    backToList() {
+      this.addressOfContact = [];
     }
 
     contact = {};
@@ -28,14 +38,7 @@ export class Contacts {
     constructor(private service: ContactsService) {
       this.service.getData().subscribe((data) => {
         this.data = data;
-      });;
-    // this.service.getData().then((data) => {
-    //   console.log(data);
-    //   this.data = data;
-    // }).catch(function(e) {
-    //   console.log(e); // "oh, no!"
-    // });
-    
+      });
   }
 
     toInt(num: string) {
