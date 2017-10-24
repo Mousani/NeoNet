@@ -8,6 +8,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class InlineForm {
 
 	@Input() addNew;
+	@Input() contactEdit;
 	@Output() addNewChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 	ngOnInit() {
 		console.log(this.addNew)
@@ -22,7 +23,6 @@ export class InlineForm {
 	submitContact() {
 		console.log(this.contact);
 		console.log(this.address);
-		
 	}
 
 	
