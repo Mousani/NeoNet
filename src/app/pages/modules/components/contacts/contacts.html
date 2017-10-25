@@ -111,7 +111,7 @@
             <ba-card *ngFor="let address of addressOfContact; let i = index" cardTitle="Address {{i+1}}" baCardClass="with-scroll table-panel" rightIcon="add-item-icon ion-edit">
               <view-address [(address)]="addressOfContact[i]" [(viewContactStatus)]="viewContactStatus"></view-address>
               <button class="btn btn-danger right" type="button" (click)="viewContactStatus = !viewContactStatus;backToList();">Back</button>
-              <button class="btn btn-primary right" type="button" (click)="lgModalShow(addressOfContact[i])">popup</button>
+              <button class="btn btn-primary right" type="button" (click)="lgModalShow(addressOfContact[i])">Edit</button>
             </ba-card>
           </div>
       </div>

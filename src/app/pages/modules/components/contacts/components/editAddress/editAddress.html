@@ -6,42 +6,110 @@
     </button>
   </div>
   <div class="modal-body">
-    <div class="horizontal-scroll">
-      <table class="table table-hover">
-    
-        <tbody>
-          <tr class="no-top-border"> </tr>
-          <tr [hidden]="!address.dbAddressLabel" class="no-top-border">
-            <td></td>
-            <td class="td-key">Address Label :</td>
-            <td class="td-value">{{address.dbAddressLabel}}</td>
-          </tr>
-          <tr class="no-top-border">
-            <td></td>
-            <td class="td-key">Name :</td>
-            <td class="td-value">{{address.dbTitle}} {{address.dbFirstName}} {{address.dbLastName}}</td>
-          </tr>
-          <!-- <tr class="no-border">
-            <td></td>
-            <td class="td-key ">Full Address :</td>
-            <td></td>
-          </tr>
-          <tr >
-            <td class="no-border"></td>
-            <td  colspan="2" class="no-border">{{address.dbCompany}} {{address.dbCity}} {{address.State}} {{address.Country}}
-                ZIP: {{address.dbZip}} Email: {{address.dbEmail}}
-            </td>
-          </tr> -->
-          <tr class="no-top-border">
-            <td></td>
-            <td class="td-key">Full Address :</td>
-            <td class="td-value">{{address.dbAddress}} {{address.dbCity}}, {{address.dbState}}, {{address.dbCountry}} {{address.dbZip}} 
-              <!-- {{((address.dbEmail)?" Email: "+address.dbEmail:"")}} -->
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+    <form>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="inputFirstName">Address Label</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbAddressLabel" name="dbAddressLabel" placeholder="Address Label">
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="inputLastName">Title</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbTitle" name="dbTitle" placeholder="Title">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="inputFirstName">First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbFirstName" name="dbFirstName" placeholder="First Name">
+          </div>
+        </div>
+
+
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="inputLastName">Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbLastName" name="dbLastName" placeholder="Last Name">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputFirstName">Company</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbCompany" name="dbCompany" placeholder="Company">
+          </div>
+        </div>
+      
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputLastName">Business Title</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbBusinessTitle" name="dbBusinessTitle" placeholder="Business Title">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="inputLastName">Address</label>
+            <textarea class="form-control" style="height:60px;" placeholder="Address" [(ngModel)]="address.dbAddress" name="dbAddress"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="inputLastName">City</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbCity" name="dbCity" placeholder="City">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="inputFirstName">State</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbState" name="dbState" placeholder="State">
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="form-group">
+            <label for="inputFirstName">Province</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbProvince" name="dbProvince" placeholder="Province">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputLastName">Country</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbCountry" name="dbCountry" placeholder="Country">
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="inputFirstName">Zip</label>
+            <input type="text" class="form-control" [(ngModel)]="address.dbZip" name="dbZip" placeholder="Zip">
+          </div>
+        </div>
+      </div>
+      <div class="row"  *ngFor="let email of address.dbEmails; let i = index" >
+          <div class="col-sm-6">
+            <div class="form-group">
+              <!-- <label for="inputLastName">Country</label> -->
+              <input type="text" class="form-control" [(ngModel)]="email[i]" name="email" placeholder="Email">
+            </div>
+          </div>
+        </div>
+
+
+      <!-- <button type="submit" class="btn btn-danger">Submit</button> -->
+    </form>
+
+
   </div>
   <div class="modal-footer">
     <button class="btn btn-primary confirm-btn" (click)="closeModal()">Save changes</button>

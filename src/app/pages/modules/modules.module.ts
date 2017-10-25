@@ -23,6 +23,7 @@ import { ViewContact } from './components/contacts/components/viewContact';
 import { ViewAddress } from './components/contacts/components/viewAddress';
 
 import { KeysPipe } from './components/contacts/components/viewContact/keys.pipe';
+import { AddressKeysPipe } from './components/contacts/components/editAddress/address-keys.pipe';
 
 import { Invoices } from './components/invoices/invoices.component';
 import { InvoicesService } from './components/invoices/invoices.service';
@@ -51,6 +52,7 @@ import { EditAddress } from './components/contacts/components/editAddress';
     ViewAddress,
     KeysPipe,
     Invoices,
+    AddressKeysPipe,
     // EditAddress,
   ],
   providers: [
