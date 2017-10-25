@@ -6,10 +6,13 @@ import { NgaModule } from '../theme/nga.module';
 import { AppTranslationModule } from '../app.translation.module';
 
 import { Pages } from './pages.component';
-
+import { EditAddress } from './modules/components/contacts/components/editAddress';
 @NgModule({
   imports: [CommonModule, AppTranslationModule, NgaModule, routing],
-  declarations: [Pages]
+  declarations: [Pages, EditAddress],
+  entryComponents: [
+    EditAddress,
+  ],
 })
 export class PagesModule {
 }

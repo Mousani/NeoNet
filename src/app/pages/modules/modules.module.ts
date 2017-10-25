@@ -27,6 +27,8 @@ import { KeysPipe } from './components/contacts/components/viewContact/keys.pipe
 import { Invoices } from './components/invoices/invoices.component';
 import { InvoicesService } from './components/invoices/invoices.service';
 
+import { EditAddress } from './components/contacts/components/editAddress';
+
 
 
 @NgModule({
@@ -49,12 +51,16 @@ import { InvoicesService } from './components/invoices/invoices.service';
     ViewAddress,
     KeysPipe,
     Invoices,
+    // EditAddress,
   ],
   providers: [
     ContactsService,
     CostingService,
     InvoicesService,
-  ]
+  ],
+  // entryComponents: [
+  //   EditAddress,
+  // ],
 })
 export class ModulesModule {
 }
