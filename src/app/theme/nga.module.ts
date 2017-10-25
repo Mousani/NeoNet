@@ -28,7 +28,9 @@ import {
   BaPageTop,
   BaPictureUploader,
   BaSidebar,
-  BaFileUploader
+  BaFileUploader,
+  Modals,
+  DefaultModal,
 } from './components';
 
 import { BaCardBlur } from './components/baCard/baCardBlur.directive';
@@ -72,7 +74,9 @@ const NGA_COMPONENTS = [
   BaPageTop,
   BaPictureUploader,
   BaSidebar,
-  BaFileUploader
+  BaFileUploader,
+  Modals,
+  DefaultModal,
 ];
 
 const NGA_DIRECTIVES = [
@@ -118,7 +122,8 @@ const NGA_VALIDATORS = [
     ...NGA_PIPES,
     ...NGA_DIRECTIVES,
     ...NGA_COMPONENTS
-  ]
+  ],
+  entryComponents: [DefaultModal],
 })
 export class NgaModule {
   static forRoot(): ModuleWithProviders {

@@ -11,7 +11,7 @@
       <tr class="no-top-border">
         <td></td>
         <td class="td-key">Name :</td>
-        <td class="td-value">{{address.dbBusinessTitle}} {{address.dbFirstName}} {{address.dbLastName}}</td>
+        <td class="td-value">{{address.dbTitle}} {{address.dbFirstName}} {{address.dbLastName}}</td>
       </tr>
       <!-- <tr class="no-border">
         <td></td>
@@ -27,8 +27,8 @@
       <tr class="no-top-border">
         <td></td>
         <td class="td-key">Full Address :</td>
-        <td class="td-value">{{address.dbCompany}} {{address.dbCity}} {{address.State}} {{address.Country}} <br>ZIP: {{address.dbZip}} 
-          {{((address.dbEmail)?" Email: "+address.dbEmail:"")}}
+        <td class="td-value">{{address.dbAddress}} {{address.dbCity}}, {{address.dbState}}, {{address.dbCountry}} {{address.dbZip}} 
+          <!-- {{((address.dbEmail)?" Email: "+address.dbEmail:"")}} -->
         </td>
       </tr>
     </tbody>
