@@ -32,7 +32,7 @@ export class Contacts {
 
 
     lgModalShow(address) {
-      const activeModal = this.modalService.open(EditAddress, {size: 'sm'});
+      const activeModal = this.modalService.open(EditAddress);
       activeModal.componentInstance.modalHeader = 'Edit Address';
       console.log("this.address ", address);
       activeModal.componentInstance.address = address;
