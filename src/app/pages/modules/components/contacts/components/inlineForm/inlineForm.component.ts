@@ -10,6 +10,11 @@ export class InlineForm {
 	@Input() addNew;
 	@Input() contactEdit;
 	@Output() addNewChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+	ngOnChanges() {
+		console.log("this.contactEdit ",this.contactEdit);
+		this.contact = this.contactEdit;
+	}
 	ngOnInit() {
 		console.log(this.addNew)
 	}
