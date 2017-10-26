@@ -107,22 +107,10 @@
         </div>
       </div>
       <div class="row">
-        <div class="form-group col-sm-3">
-          <label for="input01">Address Label</label>
-          <input type="text" class="form-control" [(ngModel)]="address[0].dbAddressLabel" name="dbWebAddress1">
-        </div>
-        <div class="form-group col-sm-3">
-          <label for="input01">Name</label>
-          <input type="text" class="form-control" [(ngModel)]="address[0].dbFirstName" name="dbWebAddress2">
-        </div>
-        <div class="form-group col-sm-3">
-          <label for="input01">Full Address</label>
-          <input type="text" class="form-control" [(ngModel)]="address[0].dbAddress" name="dbWebAddress3">
-        </div>
-        <div class="form-group col-sm-3">
-          <label for="input01">Associated Phones</label>
-          <input type="text" class="form-control" [(ngModel)]="address[0].dbPhone" name="dbWebAddress4">
-        </div>
+       <!-- <view-address-simple></view-address-simple> -->
+       <a href="JavaScript:void(0);" (click)="addAddress();" class="add-element">
+          Add Address<i class="add-item-icon ion-plus"></i>
+        </a>
       </div>
 
       <div class="row">

@@ -17,7 +17,7 @@ export class EditAddress implements OnInit {
 	}
 
   modalHeader: string;
-  address: object = {
+  address = {
     "dbContactNumber": "",
 		"dbAddress": "",
 		"dbCity": "",
@@ -40,8 +40,21 @@ export class EditAddress implements OnInit {
     "dbPhoneNumbers": [],
   };
   
-  // dbEmails = ['g.lokesh@122.com','g.lokesh@ss2.com']
+	
+	addElement(array, key) {
+		console.log(array[key])
+		if(!array[key]) array[key] = [];
+		array[key].push('');
+	}
+	deleteElement(array, key, index) {
+		array[key].splice(index, 1);
+	}
 
+
+	trackByIndex(index: number, value: number) {
+    return index;
+	}
+	
   labels =  {
 		"dbContactNumber": "Contact Number",
 		"dbAddress": "Address",

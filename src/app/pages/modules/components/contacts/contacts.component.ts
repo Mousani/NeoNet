@@ -32,11 +32,19 @@ export class Contacts {
 
 
     lgModalShow(address) {
-      const activeModal = this.modalService.open(EditAddress);
-      activeModal.componentInstance.modalHeader = 'Edit Address';
+      const activeModal = this.modalService.open(EditAddress/*, {size : 'lg'}*/);
+      activeModal.componentInstance.modalHeader = 'Address';
       console.log("this.address ", address);
+      this.addElement(address, 'dbEmails');
+      this.addElement(address, 'dbPhoneNumbers');
       activeModal.componentInstance.address = address;
     } 
+    addElement(array, key) {
+      console.log(array[key])
+      if(!array[key]) array[key] = [];
+      array[key].push('');
+      return array;
+    }
 
     public setContact = (contact) => {  
       this.viewContactStatus = true;
