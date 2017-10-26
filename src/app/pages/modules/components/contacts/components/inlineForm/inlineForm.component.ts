@@ -1,5 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Modals } from '../../../../../../theme/components/modals/modals.component';
+import { EditAddress } from './../editAddress/editAddress.component';
+
+
 @Component({
 	selector: 'inline-form',
 	styleUrls: ['./inlineForm.scss'],
@@ -30,6 +35,22 @@ export class InlineForm {
 		console.log(this.address);
 	}
 
+	addAddress() {
+		const activeModal = this.modalService.open(EditAddress/*, {size : 'lg'}*/);
+		activeModal.componentInstance.modalHeader = 'Address';
+		console.log("this.address ", this.address[0]);
+		this.addElement(this.address[0], 'dbEmails');
+		this.addElement(this.address[0], 'dbPhoneNumbers');
+		activeModal.componentInstance.address = this.address[0];
+	}
+
+	addElement(array, key) {
+		console.log(array[key])
+		if(!array[key]) array[key] = [];
+		array[key].push('');
+		return array;
+	  }
+
 
 
 	contactsCompanyList: [
@@ -39,16 +60,27 @@ export class InlineForm {
 
 	address = [
 		{
-			"dbAddressLabel": "",
-			"dbAddress": "",
-			"dbCity": "",
-			"dbZip": "",
-			"dbCountry": "",
-			"dbAddressType": "",
-			"dbTitle": "",
-			"dbFirstName": "",
-			"dbLastName": "",
-		},
+			"dbContactNumber": "",
+				"dbAddress": "",
+				"dbCity": "",
+				"dbState": "",
+				"dbZip": "",
+				"dbCountry": "",
+				"dbAddressType": "",
+				"dbTitle": "",
+				"dbFirstName": "",
+				"dbLastName": "",
+				"dbBusinessTitle": "",
+				"dbCompany": "",
+				"dbProvince": "",
+				"dbAddressKey": "",
+				"dbType": "",
+				"dbAddressLabel": "",
+				"dbNumberKeys": "",
+			"dbEmail": "",
+			"dbEmails": [],
+			"dbPhoneNumbers": [],
+		  },
 	];
 
 
@@ -893,7 +925,7 @@ export class InlineForm {
 
 
 
-	constructor() {
+	constructor(private modalService: NgbModal) {
 		this.contact.dbContactsCompany = "Neoteric Hovercraft, Inc";
 	}
 
