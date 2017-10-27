@@ -46,8 +46,7 @@ export class InlineForm {
 
 	addElement(array, key) {
 		console.log(array[key])
-		if(!array[key]) array[key] = [];
-		array[key].push('');
+		if(!array[key] || array[key].length == 0 ) {array[key] = [];array[key].push('');}
 		return array;
 	  }
 
