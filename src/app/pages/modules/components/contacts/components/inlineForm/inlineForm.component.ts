@@ -14,11 +14,13 @@ export class InlineForm {
 
 	@Input() addNew;
 	@Input() contactEdit;
+	@Input() addressArray;
 	@Output() addNewChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 	ngOnChanges() {
 		console.log("this.contactEdit ",this.contactEdit);
 		this.contact = this.contactEdit;
+		this.address = this.addressArray;
 	}
 	ngOnInit() {
 		console.log(this.addNew)
@@ -38,10 +40,12 @@ export class InlineForm {
 	addAddress() {
 		const activeModal = this.modalService.open(EditAddress/*, {size : 'lg'}*/);
 		activeModal.componentInstance.modalHeader = 'Address';
-		console.log("this.address ", this.address[0]);
-		this.addElement(this.address[0], 'dbEmails');
-		this.addElement(this.address[0], 'dbPhoneNumbers');
-		activeModal.componentInstance.address = this.address[0];
+		let addressObj = Object.assign({}, this.addressObj);
+		this.addElement(addressObj, 'dbEmails');
+		this.addElement(addressObj, 'dbPhoneNumbers');
+		activeModal.componentInstance.address = addressObj;
+		this.address.push(addressObj);
+		console.log("this.addressK ", this.address)
 	}
 
 	addElement(array, key) {
@@ -57,30 +61,30 @@ export class InlineForm {
 		"Hovertechnics, LLC"
 	];
 
-	address = [
-		{
-			"dbContactNumber": "",
-				"dbAddress": "",
-				"dbCity": "",
-				"dbState": "",
-				"dbZip": "",
-				"dbCountry": "",
-				"dbAddressType": "",
-				"dbTitle": "",
-				"dbFirstName": "",
-				"dbLastName": "",
-				"dbBusinessTitle": "",
-				"dbCompany": "",
-				"dbProvince": "",
-				"dbAddressKey": "",
-				"dbType": "",
-				"dbAddressLabel": "",
-				"dbNumberKeys": "",
-			"dbEmail": "",
-			"dbEmails": [],
-			"dbPhoneNumbers": [],
-		  },
-	];
+	address = [];
+
+	addressObj = {
+		"dbContactNumber": "",
+			"dbAddress": "",
+			"dbCity": "",
+			"dbState": "",
+			"dbZip": "",
+			"dbCountry": "",
+			"dbAddressType": "",
+			"dbTitle": "",
+			"dbFirstName": "",
+			"dbLastName": "",
+			"dbBusinessTitle": "",
+			"dbCompany": "",
+			"dbProvince": "",
+			"dbAddressKey": "",
+			"dbType": "",
+			"dbAddressLabel": "",
+			"dbNumberKeys": "",
+		"dbEmail": "",
+		"dbEmails": [],
+		"dbPhoneNumbers": [],
+	  };
 
 
 	contact = {

@@ -23,8 +23,10 @@ export class Contacts {
     viewContactStatus = false;
     addressOfContact = [];
     address = {};
+    addressArray = [];
 
-    editContact(contact) {
+    editContact(contact, addressArray) {
+      this.addressArray = addressArray;
       this.addNew = !this.addNew;
       this.viewContactStatus = !this.viewContactStatus;
     }

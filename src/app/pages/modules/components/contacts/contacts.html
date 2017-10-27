@@ -98,13 +98,13 @@
         
         
     </div>
-    <inline-form [hidden]="!addNew" [(addNew)]="addNew" [(contactEdit)]="contact"></inline-form>
+    <inline-form [hidden]="!addNew" [(addNew)]="addNew" [(contactEdit)]="contact" [(addressArray)]="addressArray"></inline-form>
     <div class="row"  [hidden]="!viewContactStatus"  >
         <div class="col-lg-6 col-md-12">
           <ba-card cardTitle="Contact Details" baCardClass="with-scroll table-panel" rightIcon="add-item-icon ion-edit">
             <view-contact [(contact)]="contact" [(viewContactStatus)]="viewContactStatus"></view-contact>
             <button class="btn btn-danger right" type="button" (click)="viewContactStatus = !viewContactStatus;backToList();">Back</button>
-            <button class="btn btn-primary right" type="button" (click)="editContact(contact)">Edit</button>
+            <button class="btn btn-primary right" type="button" (click)="editContact(contact, addressOfContact)">Edit</button>
           </ba-card>
         </div>
         <div class="col-lg-6 col-md-12">

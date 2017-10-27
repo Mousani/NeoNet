@@ -1,5 +1,6 @@
-import { Component,Input,  OnInit } from '@angular/core';
+import { Component,Input,  OnInit, Output, EventEmitter} from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'edit-address',
@@ -9,7 +10,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 export class EditAddress implements OnInit {
 
-  @Input() addressEdit;
+	@Input() addressEdit;
+	@Output() addNewChange: EventEmitter<object> = new EventEmitter<object>();
 
 	ngOnChanges() {
 		console.log("this.addressEdit ",this.addressEdit);
@@ -82,6 +84,7 @@ export class EditAddress implements OnInit {
   ngOnInit() {}
 
   closeModal() {
+		this.addNewChange.emit(this.address);
     this.activeModal.close();
   }
 }
