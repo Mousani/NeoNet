@@ -30,7 +30,7 @@ import { InvoicesService } from './components/invoices/invoices.service';
 
 import { EditAddress } from './components/contacts/components/editAddress';
 
-import { ViewAddressSimple } from './components/contacts/components/viewAddressSimple';
+import { ViewAddressSimple } from './components/contacts/components/inlineForm/components/viewAddressSimple';
 // import { ViewAddressSimpleService } from './components/contacts/components/viewAddressSimple/viewAddressSimple.service';
 
 
@@ -57,6 +57,7 @@ import { ViewAddressSimple } from './components/contacts/components/viewAddressS
     KeysPipe,
     Invoices,
     AddressKeysPipe,
+    ViewAddressSimple,
     // EditAddress,
   ],
   providers: [
