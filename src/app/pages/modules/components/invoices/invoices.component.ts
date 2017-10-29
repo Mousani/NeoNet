@@ -42,7 +42,7 @@ export class Invoices {
 
   public toDate(dateObj) {
     if(dateObj) 
-      return (dateObj.day+1)+" - "+this.month[dateObj.month+1]+" - "+(dateObj.year);
+      return (dateObj.day+1)+"-"+this.month[dateObj.month+1]+"-"+(dateObj.year);
     else 
       return "";
   }
