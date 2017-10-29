@@ -5,7 +5,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading"></div>
 
-                <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                <table class="table table-striped" [mfData]="data | costingDataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
                     <thead>
                         <tr>
                             <th colspan="4" class="col-12">
@@ -57,5 +57,5 @@
         
         
     </div>
-    <inline-form [hidden]="!addNew" [(addNew)]="addNew"></inline-form>
+    
 </div>

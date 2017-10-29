@@ -1,0 +1,126 @@
+<form class="form-inline">
+  <ba-card title="" cardTitle="Create New Invoice" class="col-6">
+    <div class="row">
+      <!-- <div class="row"> -->
+      <div class="form-group col-sm-6">
+        <label for="input01">Invoice Date</label>
+        <input type="date" class="form-control" name="dbBusinessTitle">
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="input01">Order Date</label>
+        <input type="date" class="form-control" name="dbPrimaryEmail">
+      </div>
+    </div>
+    <div class="row">
+      <div  class="form-group col-sm-12 auto-c" style="color:black;">
+         
+          <!-- <div > -->
+          <label for="input01" >Contact # &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <!-- <input type="type" class="form-control" name="dbBusinessTitle"> -->
+            <!-- <div > -->
+            <input [ngModel]="model1" class="form-control"  name="Contact" ng2-auto-complete 
+            [source]="arrayOfStrings"
+            (valueChanged)="valueChanged($event)"
+            placeholder="enter text" min-chars="2" />
+          <!-- </div> -->
+          <!-- </div> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-12">
+        <label for="input01">Notes</label>
+        <textarea class="form-control" placeholder="Notes" name="dbAddNotes"></textarea>
+      </div>
+    </div>
+
+    <div class="row" style="float:right;">
+      <div class="form-group col-sm-5">
+        <button type="submit" class="btn btn-primary" (click)="submitContact()">Submit Changes</button>
+      </div>
+      <div class="form-group col-sm-5">
+        <button type="submit" class="btn btn-danger" (click)="createToggle()">Cancel Changes</button>
+      </div>
+    </div>
+  </ba-card>
+  <ba-card class="col-6">
+    <div class="row">
+      <div class="form-group col-sm-12">
+        <label for="input01">Comments </label>
+        <textarea class="form-control" placeholder="Comments" name="dbComments"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="input01">Invoice for Company</label>
+        <select class="form-control" name="dbContactsCompany">
+          <option value="Neoteric Hovercraft, Inc" [selected]>Neoteric Hovercraft, Inc</option>
+          <option value="Hovertechnics, LLC" title="" id="">Hovertechnics, LLC</option>
+        </select>
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="input01">Discount Percent</label>
+        <input type="type" class="form-control" name="dbDiscountPercent">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="input01">Discount Amount</label>
+        <input type="type" class="form-control" name="dbDiscountAmount">
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="input01">Discount Received</label>
+        <input type="type" class="form-control" name="dbDiscountReceived">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="input01">Shipping Cost</label>
+        <input type="type" class="form-control" name="dbShippingCost">
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="input01">Sales Tax (%)</label>
+        <input type="type" class="form-control" name="dbSalesTax">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-12">
+        <label for="input01">Shipping Method</label>
+        <select class="form-control" name="dbShippingMethod">
+          <option value="Neoteric Hovercraft, Inc" [selected]>Neoteric Hovercraft, Inc</option>
+          <option value="Hovertechnics, LLC" title="" id="">Hovertechnics, LLC</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-12">
+        <label for="input01">Shipping Info</label>
+        <textarea class="form-control" placeholder="Shipping Info" name="dbShippingInfo"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <label for="input01">Delivery Date</label>
+        <input type="date" class="form-control" name="dbDeliveryDate">
+      </div>
+      <div class="form-group col-sm-6">
+        <label for="input01">Customer P O</label>
+        <input type="type" class="form-control" name="dbCustomerPO">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-sm-12">
+        <label for="input01">Terms</label>
+        <input type="type" class="form-control" name="dbTerms">
+      </div>
+    </div>
+  </ba-card>
+  <!-- <ba-card>
+  <div class="task-todo-container">
+    <input type="text" value="" class="form-control task-todo" placeholder="Address"  [(ngModel)]="newTodoText" name="newTodoText"/>
+    <i  class="add-item-icon ion-plus-round"></i>
+    <i  class="add-item-icon ion-edit-round"></i>
+    <div class="box-shadow-border"></div>
+  </div>
+</ba-card> -->
+</form>

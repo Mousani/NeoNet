@@ -7,7 +7,8 @@ import { DataTableModule } from 'angular2-datatable';
 import { HttpModule } from '@angular/http';
 import { DataFilterPipe } from './components/contacts/data-filter.pipe';
 import { HotTable, HotTableModule } from 'ng2-handsontable';
-
+import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
+// import { BrowserModule } from '@angular/platform-browser';
 import { routing } from './modules.routing';
 import { Modules } from './modules.component';
 
@@ -16,6 +17,7 @@ import { ContactsService } from './components/contacts/contacts.service';
 
 import { Costing } from './components/costing/costing.component';
 import { CostingService } from './components/costing/costing.service';
+import { CostingDataFilterPipe } from './components/costing/costing-data-filter.pipe';
 
 import { InlineForm } from './components/contacts/components/inlineForm';
 
@@ -27,6 +29,8 @@ import { AddressKeysPipe } from './components/contacts/components/editAddress/ad
 
 import { Invoices } from './components/invoices/invoices.component';
 import { InvoicesService } from './components/invoices/invoices.service';
+import { InvoicesDataFilterPipe } from './components/invoices/invoices-data-filter.pipe';
+import { Invoice } from './components/invoices/components/invoice/invoice.component';
 
 import { EditAddress } from './components/contacts/components/editAddress';
 
@@ -45,6 +49,8 @@ import { ViewAddressSimple } from './components/contacts/components/inlineForm/c
     Ng2SmartTableModule,
     DataTableModule,
     HttpModule,
+    // BrowserModule,
+     FormsModule, Ng2AutoCompleteModule
   ],
   declarations: [
     Modules,
@@ -58,6 +64,9 @@ import { ViewAddressSimple } from './components/contacts/components/inlineForm/c
     Invoices,
     AddressKeysPipe,
     ViewAddressSimple,
+    CostingDataFilterPipe,
+    InvoicesDataFilterPipe,
+    Invoice,
     // EditAddress,
   ],
   providers: [
