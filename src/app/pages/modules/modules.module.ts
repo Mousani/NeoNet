@@ -32,6 +32,10 @@ import { InvoicesService } from './components/invoices/invoices.service';
 import { InvoicesDataFilterPipe } from './components/invoices/invoices-data-filter.pipe';
 import { Invoice } from './components/invoices/components/invoice/invoice.component';
 
+import { Parts } from './components/parts/parts.component';
+import { PartsService } from './components/parts/parts.service';
+import { PartsDataFilterPipe } from './components/parts/parts-data-filter.pipe';
+
 import { EditAddress } from './components/contacts/components/editAddress';
 
 import { ViewAddressSimple } from './components/contacts/components/inlineForm/components/viewAddressSimple';
@@ -67,12 +71,15 @@ import { ViewAddressSimple } from './components/contacts/components/inlineForm/c
     CostingDataFilterPipe,
     InvoicesDataFilterPipe,
     Invoice,
+    Parts,
+    PartsDataFilterPipe,
     // EditAddress,
   ],
   providers: [
     ContactsService,
     CostingService,
     InvoicesService,
+    PartsService,
   ],
   // entryComponents: [
   //   EditAddress,
