@@ -5,7 +5,7 @@ import { InvoicesService } from './invoices.service';
   selector: 'invoices',
   templateUrl: './invoices.html',
   styleUrls: ['./invoices.scss']
-})
+})  
 export class Invoices {
 
     data = [];
