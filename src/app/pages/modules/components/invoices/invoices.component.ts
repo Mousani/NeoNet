@@ -14,16 +14,20 @@ export class Invoices {
     sortBy = "dbInvoiceNumber";
     sortOrder = "desc";
     count = 1;
-    addNew = false;
-    viewContactStatus = false;
+    addNewInvoice = false;
+    viewInvoiceStatus = false;
+    invoice = {};
 
-    public setContact = (contact) => {  
-      console.log(contact);
-      this.viewContactStatus = true;
-      this.contact = contact;
+
+    public setInvoice = (invoice) => {  
+      console.log(invoice);
+      this.viewInvoiceStatus = true;
+      this.invoice = invoice;
     }
 
-    contact = {};
+    
+
+   
 
     constructor(private service: InvoicesService) {
       this.service.getData().subscribe((data) => {
@@ -47,7 +51,11 @@ export class Invoices {
       return "";
   }
 
-  
+  editInvoice(invoice) {
+    this.addNewInvoice = !this.addNewInvoice;
+		this.invoice = invoice;
+		this.viewInvoiceStatus = !this.viewInvoiceStatus;
+	  }
 
     toInt(num: string) {
         return +num;
