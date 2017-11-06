@@ -1,5 +1,5 @@
 <div class="widgets">
-    <div class="row" [hidden]="addNewInvoice">
+    <div class="row" [hidden]="addNewInvoice || viewInvoiceStatus">
         <ba-card title="Basic Example" baCardClass="with-scroll" class="data-table-container" class="col-8">
             <div class="panel panel-default">
                 <div class="panel-heading">Invoices information</div>
@@ -43,10 +43,10 @@
                             <!--<td>
                                 <button (click)="remove(item)" class="btn btn-danger">x</button>
                             </td>-->
-                            <td style="text-align:center"><a href="JavaScript:void(0);"  (click)="setContact(item)">{{item.dbInvoiceNumber}}</a></td>
-                            <td style="text-align:center"><a  href="JavaScript:void(0);"  (click)="setContact(item)">{{item.dbContactNumber}}</a></td>
-                            <td style="text-align:center"><a  href="JavaScript:void(0);"  (click)="setContact(item)">{{toDate(item.dbDateOrderReceived)}}</a></td>
-                            <td  style="text-align:center"><a  href="JavaScript:void(0);"  (click)="setContact(item)">{{(item.dbPaid==0)?"No":"Yes"}}</a></td>
+                            <td style="text-align:center"><a href="JavaScript:void(0);"  (click)="setInvoice(item)">{{item.dbInvoiceNumber}}</a></td>
+                            <td style="text-align:center"><a  href="JavaScript:void(0);"  (click)="setInvoice(item)">{{item.dbContactNumber}}</a></td>
+                            <td style="text-align:center"><a  href="JavaScript:void(0);"  (click)="setInvoice(item)">{{toDate(item.dbDateOrderReceived)}}</a></td>
+                            <td  style="text-align:center"><a  href="JavaScript:void(0);"  (click)="setInvoice(item)">{{(item.dbPaid==0)?"No":"Yes"}}</a></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -64,6 +64,15 @@
         
         
     </div>
-    <invoice [hidden]="!addNewInvoice" [(addNewInvoice)]="addNewInvoice"></invoice>
+    <invoice [hidden]="!addNewInvoice" [(addNewInvoice)]="addNewInvoice" [(invoiceEdit)]="invoice"></invoice>
     
+
+    <div class="row"  [hidden]="!viewInvoiceStatus"  >
+        <div class="col-lg-8 col-md-12">
+          <ba-card cardTitle="Invoice Details" baCardClass="with-scroll table-panel" rightIcon="add-item-icon ion-edit">
+            <view-invoice [(invoice)]="invoice" [(viewInvoiceStatus)]="viewInvoiceStatus"></view-invoice>
+            <button class="btn btn-danger right" type="button" (click)="viewInvoiceStatus = !viewInvoiceStatus;">Back</button>
+            <button class="btn btn-primary right" type="button" (click)="editInvoice(invoice)">Edit</button>
+          </ba-card>
+        </div>
 </div>
