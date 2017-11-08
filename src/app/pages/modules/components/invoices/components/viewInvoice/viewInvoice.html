@@ -25,7 +25,7 @@
 
       <tr *ngFor="let entry of invoice | keys" [hidden]="!entry.value" class="no-top-border">
         <td></td>
-        <td class="td-key">{{entry.key}} :</td>
+        <td class="td-key">{{labels[entry.key]}} :</td>
         <td class="td-value">{{parseValue(entry.key, entry.value)}}</td>
       </tr>
     </tbody>

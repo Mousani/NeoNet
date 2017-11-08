@@ -28,5 +28,11 @@ export class InvoicesService {
           .map((res:Response) => res.json())
           .map(address => address.map(addressObj => addressObj.dbContactNumber));
   }
+  
+  getInvoiceParts(invoiceId) {
+    return this.http.get("./assets/json/invoiceParts.json")
+          .map((res:Response) => res.json())
+          .map(invoiceParts => invoiceParts.filter(invoicePartObj => invoicePartObj.dbInvoiceNumber === invoiceId));
+  }
 
 }
