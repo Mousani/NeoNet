@@ -17,12 +17,17 @@ export class Invoices {
     addNewInvoice = false;
     viewInvoiceStatus = false;
     invoice = {};
-
+    arrayOfStrings = [];
+    invoiceParts = [];
 
     public setInvoice = (invoice) => {  
       console.log(invoice);
       this.viewInvoiceStatus = true;
       this.invoice = invoice;
+      this.invoiceParts = [];
+      this.service.getInvoiceParts(invoice.dbInvoiceNumber).subscribe((invoiceParts) => {
+        this.invoiceParts = invoiceParts;
+      });
     }
 
     
@@ -33,6 +38,10 @@ export class Invoices {
       this.service.getData().subscribe((data) => {
         this.data = data;
       });;
+      this.service.getContactsList().subscribe((data) => {
+        this.arrayOfStrings = data;
+        console.log("data ", data)
+      });
     // this.service.getData().then((data) => {
     //   console.log(data);
     //   this.data = data;

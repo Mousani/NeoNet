@@ -15,9 +15,9 @@ export class Invoice {
 
 	@Input() addNewInvoice;
 	@Input() invoiceEdit;
+	@Input() arrayOfStrings;
 	@Input() addressArray;
 	@Output() addNewInvoiceChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-	arrayOfStrings = [];
 
 	ngOnChanges() {
 		console.log("this.invoiceEdit ",this.invoiceEdit);
@@ -34,10 +34,7 @@ export class Invoice {
 	}
 
 	constructor(private modalService: NgbModal,private service: InvoicesService) {
-		this.service.getContactsList().subscribe((data) => {
-			this.arrayOfStrings = data;
-			console.log("data ", data)
-		  });
+		
 		
 	}
 
