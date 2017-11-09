@@ -21,11 +21,13 @@ export class Invoice {
 
 	ngOnChanges() {
 		console.log("this.invoiceEdit ",this.invoiceEdit);
-		this.invoice = this.invoiceEdit;
+		this.invoice = Object.assign({}, this.invoiceEdit);;
 	}
 
 	submitInvoice(){
-		console.log("this.invoice ",this.invoice);
+		this.invoiceEdit = this.invoice;
+		this.addNewInvoice = !this.addNewInvoice;
+		this.addNewInvoiceChange.emit(this.addNewInvoice);
 	}
 
 	createToggle() {
