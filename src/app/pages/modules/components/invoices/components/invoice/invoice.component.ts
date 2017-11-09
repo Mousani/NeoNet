@@ -25,7 +25,9 @@ export class Invoice {
 	}
 
 	submitInvoice(){
+		this.invoiceEdit = this.invoice;
 		console.log("this.invoice ",this.invoice);
+		console.log("invoice.dbDateOrderReceived ",this.invoice.dbDateOrderReceived);
 	}
 
 	createToggle() {

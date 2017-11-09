@@ -33,6 +33,7 @@ import { InvoicesDataFilterPipe } from './components/invoices/invoices-data-filt
 import { Invoice } from './components/invoices/components/invoice/invoice.component';
 import { ViewInvoice } from './components/invoices/components/viewInvoice/viewInvoice.component';
 import { InvoiceParts } from './components/invoices/components/invoiceParts/invoiceParts.component';
+import { DateObj } from './components/invoices/components/invoice/dateObj.componet';
 
 
 import { Parts } from './components/parts/parts.component';
@@ -78,6 +79,7 @@ import { ViewAddressSimple } from './components/contacts/components/inlineForm/c
     InvoiceParts,
     Parts,
     PartsDataFilterPipe,
+    DateObj,
     
     // EditAddress,
   ],
