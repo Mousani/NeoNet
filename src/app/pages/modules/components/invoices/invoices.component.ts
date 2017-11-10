@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { InvoicesService } from './invoices.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Modals } from '../../../../theme/components/modals/modals.component';
+import { AddPart } from './components/addPart/addPart.component';
+import { DefaultModal } from '../../../../theme/components/modals/default-modal/default-modal.component';
 
 @Component({
   selector: 'invoices',
@@ -30,11 +34,27 @@ export class Invoices {
       });
     }
 
-    
+    lgModalShow(part) {
+      const activeModal = this.modalService.open(AddPart/*, {size : 'lg'}*/);
+      activeModal.componentInstance.modalHeader = 'Part';
+      console.log("this.part ", part);
+      activeModal.componentInstance.part = part;
+    }
+
+    addPart() {
+      const activeModal = this.modalService.open(AddPart/*, {size : 'lg'}*/);
+      activeModal.componentInstance.modalHeader = 'Part';
+      let partSample = Object.assign({}, this.partSample);
+      // this.addElement(partSample, 'dbEmails');
+      // this.addElement(partSample, 'dbPhoneNumbers');
+      activeModal.componentInstance.part = partSample;
+      this.invoiceParts.push(partSample);
+      console.log("this.partSample ", this.partSample)
+    }
 
    
 
-    constructor(private service: InvoicesService) {
+    constructor(private service: InvoicesService, private modalService: NgbModal) {
       this.service.getData().subscribe((data) => {
         this.data = data;
       });;
@@ -73,5 +93,30 @@ export class Invoices {
     sortByWordLength = (a: any) => {
         return a.city.length;
     }
+
+    partSample = {
+      "dbInvoiceNumber": "",
+      "dbLineNumber": "",
+      "dbPartNumber": "",
+      "dbTypeOfPart": "",
+      "dbRouteUseless": "",
+      "dbRouteRevUseless": "",
+      "dbDescription": "",
+      "dbQty": "",
+      "dbCurrentQtyUseless": "",
+      "dbFinishedQtyUseless": "",
+      "dbUnitCost": "",
+      "dbNotDiscountedCost": "",
+      "dbNote": "",
+      "dbExtendedCost": "",
+      "dbNotDiscountedExtendedCost": "",
+      "dbNotDiscounted": "",
+      "dbExplodedPart": "",
+      "dbProjectNumber": "",
+      "dbQtyInStock": "",
+      "dbUpdatedUseless": "",
+      "dbExplodePart": "",
+      "dbSerialNumber": "",
+    };
   
 }
