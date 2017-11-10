@@ -20,7 +20,7 @@ export class Invoice {
 	@Output() addNewInvoiceChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
 	ngOnChanges() {
-		console.log("this.invoiceEdit ",this.invoiceEdit);
+		// console.log("this.invoiceEdit ",this.invoiceEdit);
 		this.invoice = Object.assign({}, this.invoiceEdit);;
 	}
 
