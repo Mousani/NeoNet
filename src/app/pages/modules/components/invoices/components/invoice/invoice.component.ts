@@ -15,19 +15,17 @@ export class Invoice {
 
 	@Input() addNewInvoice;
 	@Input() invoiceEdit;
-	@Input() arrayOfStrings;
 	@Input() addressArray;
 	@Output() addNewInvoiceChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+	@Input() arrayOfStrings = [];
 
 	ngOnChanges() {
 		console.log("this.invoiceEdit ",this.invoiceEdit);
-		this.invoice = Object.assign({}, this.invoiceEdit);;
+		this.invoice = this.invoiceEdit;
 	}
 
 	submitInvoice(){
-		this.invoiceEdit = this.invoice;
-		this.addNewInvoice = !this.addNewInvoice;
-		this.addNewInvoiceChange.emit(this.addNewInvoice);
+		console.log("this.invoice ",this.invoice);
 	}
 
 	createToggle() {
@@ -36,7 +34,10 @@ export class Invoice {
 	}
 
 	constructor(private modalService: NgbModal,private service: InvoicesService) {
-		
+		this.service.getContactsList().subscribe((data) => {
+			this.arrayOfStrings = data;
+			console.log("data ", data)
+		  });
 		
 	}
 
