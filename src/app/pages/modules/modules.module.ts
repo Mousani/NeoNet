@@ -34,7 +34,7 @@ import { Invoice } from './components/invoices/components/invoice/invoice.compon
 import { ViewInvoice } from './components/invoices/components/viewInvoice/viewInvoice.component';
 import { InvoiceParts } from './components/invoices/components/invoiceParts/invoiceParts.component';
 import { DateObj } from './components/invoices/components/invoice/dateObj.componet';
-
+import { AddPart } from './components/invoices/components/addPart';
 
 import { Parts } from './components/parts/parts.component';
 import { PartsService } from './components/parts/parts.service';

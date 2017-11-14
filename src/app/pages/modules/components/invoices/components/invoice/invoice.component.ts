@@ -20,8 +20,8 @@ export class Invoice {
 	@Input() arrayOfStrings = [];
 
 	ngOnChanges() {
-		console.log("this.invoiceEdit ",this.invoiceEdit);
-		this.invoice = this.invoiceEdit;
+		// console.log("this.invoiceEdit ",this.invoiceEdit);
+		this.invoice = Object.assign({}, this.invoiceEdit);
 	}
 
 	submitInvoice(){
