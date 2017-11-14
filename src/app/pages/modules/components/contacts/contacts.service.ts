@@ -29,4 +29,10 @@ export class ContactsService {
           .map(address => address.filter(addressObj => addressObj.dbContactNumber === contactNumber));
   }
 
+  getInvoicesofContact(contactNumber) {
+    return this.http.get("./assets/json/invoiceOrders.json")
+          .map((res:Response) => res.json())
+          .map(invoice => invoice.filter(invoiceObj => invoiceObj.dbContactNumber === contactNumber));
+  }
+
 }

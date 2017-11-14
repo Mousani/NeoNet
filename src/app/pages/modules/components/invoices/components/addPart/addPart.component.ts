@@ -15,7 +15,7 @@ export class AddPart implements OnInit {
 
 	ngOnChanges() {
 		console.log("this.partInput ",this.partInput);
-		this.part = this.partInput;
+		this.part = Object.assign({}, this.partInput);
 	}
 
   modalHeader: string;

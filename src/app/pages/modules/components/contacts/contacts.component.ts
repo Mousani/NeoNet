@@ -24,6 +24,7 @@ export class Contacts {
     addressOfContact = [];
     address = {};
     addressArray = [];
+    invoices = []
 
     editContact(contact, addressArray) {
       this.addressArray = addressArray;
@@ -53,6 +54,9 @@ export class Contacts {
       this.contact = contact;
       this.service.getAddress(contact.dbContactNumber).subscribe((address) => {
         this.addressOfContact = address;
+      });
+      this.service.getInvoicesofContact(contact.dbContactNumber).subscribe((invoices) => {
+        this.invoices = invoices;
       });
     }
 
