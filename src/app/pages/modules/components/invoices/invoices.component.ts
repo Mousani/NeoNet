@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 import { InvoicesService } from './invoices.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Modals } from '../../../../theme/components/modals/modals.component';
@@ -23,6 +24,21 @@ export class Invoices {
     invoice = {};
     arrayOfStrings = [];
     invoiceParts = [];
+    
+    ngOnInit() {
+      this.activatedRoute
+      .queryParams
+      .subscribe(params => {
+        var invoicenumber = params['invoicenumber']
+        if(invoicenumber) {
+          var invoiceItem = {};
+          this.service.getInvoiceObj(invoicenumber).subscribe((invoiceArray) => {
+            invoiceItem = invoiceArray[0];
+            this.setInvoice(invoiceItem);
+          });
+        }
+      });
+    }
 
     public setInvoice = (invoice) => {  
       console.log(invoice);
@@ -54,7 +70,8 @@ export class Invoices {
 
    
 
-    constructor(private service: InvoicesService, private modalService: NgbModal) {
+    constructor(private service: InvoicesService, private modalService: NgbModal, 
+      private activatedRoute: ActivatedRoute) {
       this.service.getData().subscribe((data) => {
         this.data = data;
       });;

@@ -23,6 +23,13 @@ export class InvoicesService {
         .map((res:Response) => this.dataTableData = res.json()); //records in this case
   }
 
+  getInvoiceObj(invoiceId) {
+    return this.http.get("./assets/json/invoiceOrders.json")
+          .map((res:Response) => res.json())
+          .map(invoice => invoice.filter(invoiceObj => invoiceObj.dbInvoiceNumber == invoiceId));
+  }
+
+
   getContactsList() {
     return this.http.get("./assets/json/contacts.json")
           .map((res:Response) => res.json())
