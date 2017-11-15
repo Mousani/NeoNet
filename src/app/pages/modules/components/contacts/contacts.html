@@ -114,17 +114,19 @@
               <button class="btn btn-primary right" type="button" (click)="lgModalShow(addressOfContact[i])">Edit</button>
             </ba-card>
           </div>
-          <div class="col-lg-3 col-md-12" [hidden]="!viewContactStatus || invoices.length == 0" >
+          <div class="col-lg-6 col-md-12" [hidden]="!viewContactStatus || invoices.length == 0" >
             <ba-card cardTitle="Invoices" baCardClass="with-scroll table-panel" >
                 <table class="table table-hover">
                     <thead>
                     <tr class="black-muted-bg">
                       <th>Invoice Numbers</th>
+                      <th>Balance Due</th>
                     </tr>
                     </thead>
                     <tbody>
                       <tr *ngFor="let invoice of invoices" class="no-top-border">
                             <td><a [routerLink]="['/pages/modules/invoices']" [queryParams]="{ 'invoicenumber': invoice.dbInvoiceNumber }">Invoice #{{invoice.dbInvoiceNumber}}</a></td>
+                            <td>{{invoice.dbBalance | currency:'USD':true}}</td>
                       </tr>
                     </tbody>
                   </table>
