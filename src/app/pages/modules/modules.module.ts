@@ -46,6 +46,14 @@ import { ViewAddressSimple } from './components/contacts/components/inlineForm/c
 // import { ViewAddressSimpleService } from './components/contacts/components/viewAddressSimple/viewAddressSimple.service';
 
 
+import { Quotes } from './components/quotes/quotes.component';
+import { QuotesService } from './components/quotes/quotes.service';
+import { QuotesDataFilterPipe } from './components/quotes/quotes-data-filter.pipe';
+import { Quote } from './components/quotes/components/quote/quote.component';
+import { ViewQuote } from './components/quotes/components/viewQuote/viewQuote.component';
+// import { InvoiceParts } from './components/invoices/components/invoiceParts/invoiceParts.component';
+// import { DateObj } from './components/invoices/components/invoice/dateObj.componet';
+// import { AddPart } from './components/invoices/components/addPart';
 
 
 @NgModule({
@@ -80,7 +88,10 @@ import { ViewAddressSimple } from './components/contacts/components/inlineForm/c
     Parts,
     PartsDataFilterPipe,
     DateObj,
-    
+    Quotes,
+    QuotesDataFilterPipe,
+    Quote,
+    ViewQuote,
     // EditAddress,
   ],
   providers: [
@@ -88,6 +99,7 @@ import { ViewAddressSimple } from './components/contacts/components/inlineForm/c
     CostingService,
     InvoicesService,
     PartsService,
+    QuotesService,
   ],
   // entryComponents: [
   //   EditAddress,
