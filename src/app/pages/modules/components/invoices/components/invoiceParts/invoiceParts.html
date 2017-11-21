@@ -15,7 +15,7 @@
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let invoicePart of invoiceParts" class="no-top-border">
+      <tr *ngFor="let invoicePart of invoiceParts; let i = index" class="no-top-border">
         <td>{{invoicePart.dbPartNumber}}</td>
         <td class=""></td>
         <td class="">{{invoicePart.dbDescription}}</td>
@@ -23,8 +23,8 @@
         <td class=""></td>
         <td class="">{{invoicePart.dbUnitCost | currency:'USD':true}}</td>
         <td class="">{{invoicePart.dbNote}}</td>
-        <td class="">{{invoicePart.dbNotDiscounted}}</td>
-        <td class=""></td>
+        <td class="align-center"><input type="checkbox" [(ngModel)]="invoicePart.dbNotDiscounted" name="dbNotDiscounted_{{i}}"></td>
+        <td class="align-center"><input type="checkbox"></td>
         <td class="">{{invoicePart.dbExtendedCost | currency:'USD':true}}</td>
       </tr>
     </tbody>

@@ -15,7 +15,7 @@
     </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let quotePart of quoteParts" class="no-top-border">
+      <tr *ngFor="let quotePart of quoteParts; let i = index" class="no-top-border">
         <td>{{quotePart.dbPartNumber}}</td>
         <td class=""></td>
         <td class="">{{quotePart.dbDescription}}</td>
@@ -23,8 +23,8 @@
         <td class=""></td>
         <td class="">{{quotePart.dbUnitCost | currency:'USD':true}}</td>
         <td class="">{{quotePart.dbNote}}</td>
-        <td class="">{{quotePart.dbNotDiscounted}}</td>
-        <td class=""></td>
+        <td class="align-center"><input type="checkbox" [(ngModel)]="quotePart.dbNotDiscounted" name="dbNotDiscounted_{{i}}"></td>
+        <td class="align-center"><input type="checkbox"></td>
         <td class="">{{quotePart.dbExtendedCost | currency:'USD':true}}</td>
       </tr>
     </tbody>
