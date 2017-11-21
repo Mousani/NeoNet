@@ -51,9 +51,8 @@ import { QuotesService } from './components/quotes/quotes.service';
 import { QuotesDataFilterPipe } from './components/quotes/quotes-data-filter.pipe';
 import { Quote } from './components/quotes/components/quote/quote.component';
 import { ViewQuote } from './components/quotes/components/viewQuote/viewQuote.component';
-// import { InvoiceParts } from './components/invoices/components/invoiceParts/invoiceParts.component';
-// import { DateObj } from './components/invoices/components/invoice/dateObj.componet';
-// import { AddPart } from './components/invoices/components/addPart';
+import { QuoteParts } from './components/quotes/components/quoteParts/quoteParts.component';
+import { AddQuotePart } from './components/quotes/components/addQuotePart/addQuotePart.component';
 
 
 @NgModule({
@@ -92,6 +91,7 @@ import { ViewQuote } from './components/quotes/components/viewQuote/viewQuote.co
     QuotesDataFilterPipe,
     Quote,
     ViewQuote,
+    QuoteParts,
     // EditAddress,
   ],
   providers: [

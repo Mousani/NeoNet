@@ -3,7 +3,8 @@
     <thead>
     <tr class="black-muted-bg">
       <th >Part#</th>
-      <th >P/F Description</th>
+      <th >P/F</th>
+      <th >Description</th>
       <th >Qty</th>
       <th class="">Unit</th>
       <th >Unit Cost</th>
@@ -16,6 +17,7 @@
     <tbody>
       <tr *ngFor="let invoicePart of invoiceParts" class="no-top-border">
         <td>{{invoicePart.dbPartNumber}}</td>
+        <td class=""></td>
         <td class="">{{invoicePart.dbDescription}}</td>
         <td class="align-center">{{invoicePart.dbQty}}</td>
         <td class=""></td>

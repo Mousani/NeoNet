@@ -93,12 +93,12 @@
             </ba-card>
         </div>
     </div>
-    <!-- <div class="row" [hidden]="!viewQuoteStatus && !addNewQuote">
+    <div class="row" [hidden]="!viewQuoteStatus && !addNewQuote">
         <div class="col-lg-12 col-md-12">
             <ba-card cardTitle="Parts Details" baCardClass="with-scroll table-panel">
-                <invoice-parts [(invoiceParts)]="invoiceParts" [(viewQuoteStatus)]="viewQuoteStatus"></invoice-parts>
+                <quote-parts [(quoteParts)]="quoteParts" [(viewQuoteStatus)]="viewQuoteStatus"></quote-parts>
                 <button class="btn btn-danger right" type="button" (click)="viewQuoteStatus = false;addNewQuote = false;">Back</button>
                 <button class="btn btn-primary right" type="button" [hidden]="!addNewQuote" (click)="addPart()">Add Part</button>
             </ba-card>
         </div>
-    </div> -->
+    </div>

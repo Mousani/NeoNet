@@ -3,7 +3,7 @@ import {Router, ActivatedRoute, Params} from '@angular/router';
 import { QuotesService } from './quotes.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Modals } from '../../../../theme/components/modals/modals.component';
-import { AddPart } from './components/addPart/addPart.component';
+import { AddQuotePart } from './components/addQuotePart/addQuotePart.component';
 import { DefaultModal } from '../../../../theme/components/modals/default-modal/default-modal.component';
 
 @Component({
@@ -51,14 +51,14 @@ export class Quotes {
     }
 
     lgModalShow(part) {
-      const activeModal = this.modalService.open(AddPart/*, {size : 'lg'}*/);
+      const activeModal = this.modalService.open(AddQuotePart/*, {size : 'lg'}*/);
       activeModal.componentInstance.modalHeader = 'Part';
       console.log("this.part ", part);
       activeModal.componentInstance.part = part;
     }
 
     addPart() {
-      const activeModal = this.modalService.open(AddPart/*, {size : 'lg'}*/);
+      const activeModal = this.modalService.open(AddQuotePart/*, {size : 'lg'}*/);
       activeModal.componentInstance.modalHeader = 'Part';
       let partSample = Object.assign({}, this.partSample);
       // this.addElement(partSample, 'dbEmails');
