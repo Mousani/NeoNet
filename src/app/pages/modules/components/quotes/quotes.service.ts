@@ -37,7 +37,7 @@ export class QuotesService {
   }
   
   getQuoteParts(invoiceId) {
-    return this.http.get("./assets/json/invoiceParts.json")
+    return this.http.get("./assets/json/quoteParts.json")
           .map((res:Response) => res.json())
           .map(invoiceParts => invoiceParts.filter(invoicePartObj => invoicePartObj.dbQuoteNumber === invoiceId));
   }
