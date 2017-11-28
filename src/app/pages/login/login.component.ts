@@ -13,6 +13,7 @@ export class Login {
   public email:AbstractControl;
   public password:AbstractControl;
   public submitted:boolean = false;
+  errormessage:string = "";
 
   constructor(fb:FormBuilder, private router: Router, private activatedRoute: ActivatedRoute) {
     this.form = fb.group({
@@ -27,9 +28,11 @@ export class Login {
   public onSubmit(values:Object):void {
     this.submitted = true;
     if (this.form.valid) {
-      if(this.email.value == "testing") {
+      if(this.email.value == "testing" && this.password.value == "testing") {
         localStorage.setItem('currentUser', this.email.value);
         this.router.navigate([ this.activatedRoute.snapshot.queryParams['returnUrl'] || '/pages/dashboard']);
+      }else {
+        this.errormessage = "Username of Password incorrect";
       }
     }
   }
