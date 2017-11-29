@@ -16,6 +16,8 @@ export class InlineForm {
 	@Input() contactEdit;
 	@Input() addressArray;
 	@Output() addNewChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+	contact = {};
+	address = [];
 
 	ngOnChanges() {
 		console.log("this.contactEdit ",this.contactEdit);
@@ -24,6 +26,7 @@ export class InlineForm {
 	}
 	ngOnInit() {
 		console.log(this.addNew)
+		
 	}
 	createToggle() {
 		console.log(this.addNew)
@@ -61,7 +64,18 @@ export class InlineForm {
 		"Hovertechnics, LLC"
 	];
 
-	address = [];
+	constructor(private modalService: NgbModal) {
+		this.contact = Object.assign({}, this.contactEmpty);
+		// this.contact.dbContactsCompany = "Neoteric Hovercraft, Inc";
+	}
+
+	clear() {
+		this.contact = Object.assign({}, this.contactEmpty);
+		this.address = [];
+	}
+
+	isRemember: boolean = false;
+	
 
 	addressObj = {
 		"dbContactNumber": "",
@@ -87,7 +101,7 @@ export class InlineForm {
 	  };
 
 
-	contact = {
+	contactEmpty = {
 		"dbDate": "",
 		"dbLastName": "",
 		"dbFirstName": "",
@@ -928,9 +942,5 @@ export class InlineForm {
 
 
 
-	constructor(private modalService: NgbModal) {
-		this.contact.dbContactsCompany = "Neoteric Hovercraft, Inc";
-	}
-
-	isRemember: boolean = false;
+	
 }

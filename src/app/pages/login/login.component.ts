@@ -25,6 +25,13 @@ export class Login {
     this.password = this.form.controls['password'];
   }
 
+  ngAfterViewInit() {
+    if(this.activatedRoute.snapshot.queryParams['returnUrl']) {
+      this.errormessage = "\"Access Denied\" Please Login";
+    }
+  }
+  
+
   public onSubmit(values:Object):void {
     this.submitted = true;
     if (this.form.valid) {
@@ -32,7 +39,7 @@ export class Login {
         localStorage.setItem('currentUser', this.email.value);
         this.router.navigate([ this.activatedRoute.snapshot.queryParams['returnUrl'] || '/pages/dashboard']);
       }else {
-        this.errormessage = "Username of Password incorrect";
+        this.errormessage = "Username or Password incorrect";
       }
     }
   }
