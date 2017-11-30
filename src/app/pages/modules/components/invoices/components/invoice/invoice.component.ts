@@ -18,6 +18,7 @@ export class Invoice {
 	@Input() addressArray;
 	@Output() addNewInvoiceChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 	@Input() arrayOfStrings = [];
+	invoice = {};
 
 	ngOnChanges() {
 		// console.log("this.invoiceEdit ",this.invoiceEdit);
@@ -39,13 +40,18 @@ export class Invoice {
 			console.log("data ", data)
 		  });
 		
+		this.invoice = Object.assign({}, this.invoiceEmpty);
 	}
 
+	clear() {
+		this.invoice = Object.assign({}, this.invoiceEmpty);
+		
+	}
 	
 
 	isRemember: boolean = false;
 
-	invoice = {
+	invoiceEmpty = {
 		"dbInvoiceNumber": "",
 		"dbDateOrderReceived": {
 			"year": "",
