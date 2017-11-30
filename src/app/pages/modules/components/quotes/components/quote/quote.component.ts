@@ -18,6 +18,7 @@ export class Quote {
 	@Input() arrayOfStrings;
 	@Input() addressArray;
 	@Output() addNewQuoteChange: EventEmitter<boolean> = new EventEmitter<boolean>();
+	quote = {};
 
 	ngOnChanges() {
 		// console.log("this.invoiceEdit ",this.invoiceEdit);
@@ -36,15 +37,19 @@ export class Quote {
 	}
 
 	constructor(private modalService: NgbModal,private service: QuotesService) {
-		
-		
+		this.quote = Object.assign({}, this.quoteEmpty);
 	}
+	
+	clear() {
+		this.quote = Object.assign({}, this.quoteEmpty);
+	}
+	
 
 	
 
 	isRemember: boolean = false;
 
-	quote = {
+	quoteEmpty = {
 		"dbInvoiceNumber": "",
 		"dbDateOrderReceived": {
 			"year": "",
