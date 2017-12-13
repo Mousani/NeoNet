@@ -7,6 +7,7 @@ import { Invoices } from './components/invoices/invoices.component';
 
 import { Parts } from './components/parts/parts.component';
 import { Quotes } from './components/quotes/quotes.component';
+import { PurchaseOrders } from './components/purchaseOrders/purchaseOrders.component';
 
 import { Modals } from '../../theme/components/modals/modals.component';
 // noinspection TypeScriptValidateTypes
@@ -21,6 +22,8 @@ const routes: Routes = [
 
       { path: 'parts', component: Parts },
       { path: 'quotes', component: Quotes },
+      { path: 'parts', component: Parts },
+      { path: 'purchase_orders', component: PurchaseOrders },
     ]
   }
 ];
