@@ -58,6 +58,7 @@ import { AddQuotePart } from './components/quotes/components/addQuotePart/addQuo
 import { PurchaseOrders } from './components/purchaseOrders/purchaseOrders.component';
 import { PurchaseOrdersService } from './components/purchaseOrders/purchaseOrders.service';
 import { purchaseOrdersDataFilterPipe } from './components/purchaseOrders/purchaseOrders-data-filter.pipe';
+import { NewPO } from './components/purchaseOrders/components/newPO/newPO.component';
 
 @NgModule({
   imports: [
@@ -98,6 +99,7 @@ import { purchaseOrdersDataFilterPipe } from './components/purchaseOrders/purcha
     QuoteParts,
     PurchaseOrders,
     purchaseOrdersDataFilterPipe,
+    NewPO,
     // EditAddress,
   ],
   providers: [

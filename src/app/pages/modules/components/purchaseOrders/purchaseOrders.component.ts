@@ -13,6 +13,7 @@ export class PurchaseOrders {
     sortBy = "dbPurchaseOrderNumber";
     sortOrder = "asc";
     count = 1;
+    addNewPO = false;
 
     constructor(private service: PurchaseOrdersService) {
       this.service.getData().subscribe((data) => {

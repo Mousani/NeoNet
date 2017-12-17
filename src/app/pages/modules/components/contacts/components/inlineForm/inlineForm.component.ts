@@ -26,7 +26,6 @@ export class InlineForm {
 	}
 	ngOnInit() {
 		console.log(this.addNew)
-		
 	}
 	createToggle() {
 		console.log(this.addNew)
