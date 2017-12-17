@@ -10,6 +10,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NewPO {
 
+	@Input() addNewPO;
+	@Output() addNewPOChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 	
 	newPO = {};
 
@@ -20,6 +22,8 @@ export class NewPO {
 	}
 
 	createToggle() {
+		this.addNewPO = !this.addNewPO;
+		this.addNewPOChange.emit(this.addNewPO);
 	}
 
 	constructor() {
