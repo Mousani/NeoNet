@@ -1,5 +1,5 @@
 <div class="widgets">
-    <div class="row" [hidden]="addNew">
+    <div class="row" [hidden]="addNewPO">
         <ba-card title="Basic Example" baCardClass="with-scroll" class="data-table-container">
             
             <div class="panel panel-default">
@@ -15,7 +15,10 @@
                                     <div class="col-sm-3">
                                         <input class="form-control" [(ngModel)]="filterQuery" placeholder="Search"/>
                                     </div>
-                                    
+                                    <div class="col-sm-2">
+                                            <label class="label-control">&nbsp;&nbsp;&nbsp;</label>
+                                            <button type="submit" class="btn btn-primary" (click)="addNewPO = !addNewPO;">Add New</button>
+                                        </div>
                                  </div>
                             </th>
                         </tr>
@@ -61,5 +64,7 @@
         
         
     </div>
+
+    <new-po [hidden]="!addNewPO"  [(addNewPO)]="addNewPO"></new-po>
     
 </div>
