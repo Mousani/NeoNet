@@ -96,7 +96,7 @@
     <div class="row" [hidden]="!viewInvoiceStatus && !addNewInvoice">
         <div class="col-lg-12 col-md-12">
             <ba-card cardTitle="Parts Details" baCardClass="with-scroll table-panel">
-                <invoice-parts [(invoiceParts)]="invoiceParts" [(viewInvoiceStatus)]="viewInvoiceStatus"></invoice-parts>
+                <invoice-parts [(invoiceParts)]="invoiceParts" (addNewChange)="addPartToList($event)" [(viewInvoiceStatus)]="viewInvoiceStatus"></invoice-parts>
                 <button class="btn btn-danger right" type="button" (click)="viewInvoiceStatus = false;addNewInvoice = false;">Back</button>
                 <button class="btn btn-primary right" type="button" [hidden]="!addNewInvoice" (click)="addPart()">Add Part</button>
             </ba-card>

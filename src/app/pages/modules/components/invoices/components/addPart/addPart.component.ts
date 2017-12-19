@@ -11,14 +11,19 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 export class AddPart implements OnInit {
 
 	@Input() partInput;
+	@Output() addPart: EventEmitter<object> = new EventEmitter<object>();
 	@Output() addNewChange: EventEmitter<object> = new EventEmitter<object>();
+	
 
 	ngOnChanges() {
 		console.log("this.partInput ",this.partInput);
 		this.part = Object.assign({}, this.partInput);
 	}
 
-  modalHeader: string;
+	modalHeader: string;
+
+	addPartToList:any;
+
   part = {
     // "dbInvoiceNumber": 11,
 		// "dbLineNumber": 0,
@@ -104,8 +109,9 @@ export class AddPart implements OnInit {
   }
 
   ngOnInit() {}
-
+	invoiceParts : any;
   closeModal() {
+		this.addPartToList(this.invoiceParts,this.part);
 		this.addNewChange.emit(this.partInput);
     this.activeModal.close();
   }

@@ -12,6 +12,7 @@
       <th class="">Not Discounted</th>
       <th class="">Tax Exempt</th>
       <th class="">Extended Cost</th>
+      <th class=""></th>
     </tr>
     </thead>
     <tbody>
@@ -26,6 +27,9 @@
         <td class="align-center"><input type="checkbox" [(ngModel)]="invoicePart.dbNotDiscounted" name="dbNotDiscounted_{{i}}"></td>
         <td class="align-center"><input type="checkbox"></td>
         <td class="">{{invoicePart.dbExtendedCost | currency:'USD':true}}</td>
+        <td class=""><button class="btn btn-danger btn-icon re-size" type="button" (click)="deleteElement(i);">
+          <i class="ion-minus"></i>
+        </button></td>
       </tr>
     </tbody>
   </table>
