@@ -24,6 +24,7 @@ export class Invoices {
     invoice = {};
     arrayOfStrings = [];
     invoiceParts = [];
+    partSampleNew = {};
     
     ngOnInit() {
       this.activatedRoute
@@ -60,13 +61,22 @@ export class Invoices {
     addPart() {
       const activeModal = this.modalService.open(AddPart/*, {size : 'lg'}*/);
       activeModal.componentInstance.modalHeader = 'Part';
-      let partSample = Object.assign({}, this.partSample);
+      this.partSampleNew = Object.assign({}, this.partSample);
+      console.log("this.invoiceParts1",this.invoiceParts);
       // this.addElement(partSample, 'dbEmails');
       // this.addElement(partSample, 'dbPhoneNumbers');
-      activeModal.componentInstance.part = partSample;
-      this.invoiceParts.push(partSample);
-      console.log("this.partSample ", this.partSample)
+      activeModal.componentInstance.part = this.partSampleNew;
+      activeModal.componentInstance.invoiceParts = this.invoiceParts;
+      activeModal.componentInstance.addPartToList = function(invoiceParts,partSampleNew) {
+        console.log("this.invoiceParts2",invoiceParts);
+        invoiceParts.push(partSampleNew);
+        
+        console.log("this.partSample ", this.partSample)
+      };
+     
     }
+
+    
 
    
 

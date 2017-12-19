@@ -21,6 +21,10 @@ export class InvoiceParts {
 	submitContact() {
 	}
 
+	deleteElement(invoicePartIndex) {
+		this.invoiceParts.splice(invoicePartIndex, 1);
+	}
+
 	parseValue(key, obj) {
 		if(key.indexOf('Date') > -1) {
 			return this.toDate(obj);
