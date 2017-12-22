@@ -1,5 +1,5 @@
 <div class="widgets">
-    <div class="row" [hidden]="addNewPO">
+    <div class="row" [hidden]="addNewPO || viewPOStatus">
         <ba-card title="Basic Example" baCardClass="with-scroll" class="data-table-container">
             
             <div class="panel panel-default">
@@ -45,10 +45,10 @@
                             <!--<td>
                                 <button (click)="remove(item)" class="btn btn-danger">x</button>
                             </td>-->
-                            <td style="text-align:center">{{item.dbPurchaseOrderNumber}}</td>
-                            <td style="text-align:center">{{item.dbPurchaseDate | date: 'dd/MM/yyyy'}}</td>
-                            <td style="text-align:center">{{item.dbVendorNumber}}</td>
-                            <td style="text-align:center">{{item.dbReceived}}</td>
+                            <td style="text-align:center"><a href="JavaScript:void(0);"  (click)="setPO(item)">{{item.dbPurchaseOrderNumber}}</a></td>
+                            <td style="text-align:center"><a href="JavaScript:void(0);"  (click)="setPO(item)">{{item.dbPurchaseDate | date: 'dd/MM/yyyy'}}</a></td>
+                            <td style="text-align:center"><a href="JavaScript:void(0);"  (click)="setPO(item)">{{item.dbVendorNumber}}</a></td>
+                            <td style="text-align:center"><a href="JavaScript:void(0);"  (click)="setPO(item)">{{item.dbReceived}}</a></td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -66,5 +66,13 @@
     </div>
 
     <new-po [hidden]="!addNewPO"  [(addNewPO)]="addNewPO"></new-po>
-    
+    <div class="row"  [hidden]="!viewPOStatus"  >
+        <div class="col-lg-6 col-md-12">
+          <ba-card cardTitle="Purchase Order Details" baCardClass="with-scroll table-panel">
+            <view-purchase-order [(PO)]="PO" [(viewPOStatus)]="viewPOStatus"></view-purchase-order>
+            <button class="btn btn-danger right" type="button" (click)="viewPOStatus = !viewPOStatus;backToList();">Back</button>
+            <!-- <button class="btn btn-primary right" type="button" (click)="editContact(contact, addressOfContact)">Edit</button> -->
+          </ba-card>
+        </div>
+    </div>
 </div>
