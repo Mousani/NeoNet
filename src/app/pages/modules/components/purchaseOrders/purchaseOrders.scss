@@ -10,4 +10,10 @@
         font-weight: bolder;
         color: black;
     }
+    td a {
+        color: white;
+    }
+    td a:hover {
+        text-decoration: underline;
+    }
 }
