@@ -30,7 +30,7 @@ export class NewPO {
 	}
 
 	clear() {
-		this.newPO = Object.assign({}, this.newPO);
+		this.newPO = Object.assign({}, this.newPOEmpty);
 		
 	}
 	
