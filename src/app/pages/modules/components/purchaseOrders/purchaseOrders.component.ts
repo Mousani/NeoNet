@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PurchaseOrdersService } from './purchaseOrders.service';
-
+import {Router} from '@angular/router'
 @Component({
   selector: 'purchaseOrders',
   templateUrl: './purchaseOrders.html',
@@ -17,7 +17,7 @@ export class PurchaseOrders {
     viewPOStatus = false;
     PO = {};
 
-    constructor(private service: PurchaseOrdersService) {
+    constructor(private service: PurchaseOrdersService,private route : Router ) {
       this.service.getData().subscribe((data) => {
         this.data = data;
       });;
@@ -45,6 +45,12 @@ export class PurchaseOrders {
 
     sortByWordLength = (a: any) => {
         return a.city.length;
+    };
+
+    vendorLookUp = function(){
+      // console.log('Test');
+      this.route.navigate(['/pages/modules/vendor']);
+     
     }
   
 }

@@ -60,6 +60,7 @@ import { PurchaseOrdersService } from './components/purchaseOrders/purchaseOrder
 import { purchaseOrdersDataFilterPipe } from './components/purchaseOrders/purchaseOrders-data-filter.pipe';
 import { NewPO } from './components/purchaseOrders/components/newPO/newPO.component';
 import { ViewPO } from './components/purchaseOrders/components/viewPO';
+import { VendorComponent } from './components/vendor/vendor.component';
 
 @NgModule({
   imports: [
@@ -102,6 +103,7 @@ import { ViewPO } from './components/purchaseOrders/components/viewPO';
     purchaseOrdersDataFilterPipe,
     NewPO,
     ViewPO,
+    VendorComponent,
     // EditAddress,
   ],
   providers: [

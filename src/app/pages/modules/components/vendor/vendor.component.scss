@@ -1,23 +1,24 @@
 @import '../../../../theme/sass/conf/conf';
 :host /deep/ .widgets {
+
     .data-table-container {
         width: 100%;
         .panel-heading {
             margin-top: 25px;
         }
     }
-    mfdefaultsorter {
+    .mfdefaultsorter {
         font-weight: bolder;
         color: black;
     }
-    td a {
-        color: white;
+
+    .right {
+        float :right;
     }
-    td a:hover {
-        text-decoration: underline;
-    } 
-    
 }
-.padBtm5{
-    padding-bottom: 5px;
+td a {
+    color: white;
+}
+td a:hover {
+    text-decoration: underline;
 }
