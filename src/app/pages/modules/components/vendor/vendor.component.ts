@@ -10,12 +10,19 @@ import {VendorService} from './vendor.service'
 })
 export class VendorComponent implements OnInit {
 
-  vendorData : any;
+  data = [];
+  filterQuery = "";
+  rowsOnPage = 10;
+  sortBy = "venID";
+  sortOrder = "asc";
+  count = 1;
+  addNew = false;
+  viewContactStatus = false;
   constructor(private venSer :VendorService ) { }
 
   ngOnInit() {
     this.venSer.getData()
-    .subscribe(data =>this.vendorData = data )
+    .subscribe(data =>this.data = data )
   }
 
 }
