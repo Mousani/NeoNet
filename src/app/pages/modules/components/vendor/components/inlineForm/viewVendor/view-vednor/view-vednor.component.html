@@ -1,0 +1,19 @@
+<div>
+
+</div>
+
+<div class="horizontal-scroll">
+    <table class="table table-hover">      
+      <tbody>
+        <tr class="no-top-border">          
+        </tr>
+  
+        <tr *ngFor="let entry of vendor | keys" class="no-top-border">
+          <!-- <td></td> -->
+          <td class="td-key wid40 textRight">{{labels[entry.key]}} :</td>
+          <td class="td-value wid60">{{entry.value}}&nbsp;</td>
+          <!-- <td class="td-value wid60" ng-if="entry.value == Null">&</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>

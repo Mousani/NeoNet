@@ -6,6 +6,7 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DataTableModule } from 'angular2-datatable';
 import { HttpModule } from '@angular/http';
 import { DataFilterPipe } from './components/contacts/data-filter.pipe';
+import {  VendorFilterPipe } from './components/vendor/vendor-filter.pipe';
 import { HotTable, HotTableModule } from 'ng2-handsontable';
 import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 // import { BrowserModule } from '@angular/platform-browser';
@@ -61,6 +62,9 @@ import { purchaseOrdersDataFilterPipe } from './components/purchaseOrders/purcha
 import { NewPO } from './components/purchaseOrders/components/newPO/newPO.component';
 import { ViewPO } from './components/purchaseOrders/components/viewPO';
 import { VendorComponent } from './components/vendor/vendor.component';
+import { InlineFormComponent } from './components/vendor/components/inlineForm/inline-form/inline-form.component';
+import { ViewVednorComponent } from './components/vendor/components/inlineForm/viewVendor/view-vednor/view-vednor.component';
+import { NewEditVendorComponent } from './components/vendor/components/new-edit-vendor/new-edit-vendor.component';
 
 @NgModule({
   imports: [
@@ -104,6 +108,10 @@ import { VendorComponent } from './components/vendor/vendor.component';
     NewPO,
     ViewPO,
     VendorComponent,
+    VendorFilterPipe,
+    InlineFormComponent,
+    ViewVednorComponent,
+    NewEditVendorComponent,
     // EditAddress,
   ],
   providers: [
