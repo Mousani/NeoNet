@@ -1,5 +1,5 @@
 
-//Git CheckinTest
+//Git CheckinTest -- Test 2
 import { Component, OnInit } from '@angular/core';
 
 import {VendorService} from './vendor.service';
