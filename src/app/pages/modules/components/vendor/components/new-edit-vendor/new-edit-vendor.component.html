@@ -3,7 +3,8 @@
     <div class="row">
       <div class="form-group col-sm-3">
         <label>Date Added</label>
-        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbDateAdded" name="dbFirstName">
+        <!-- <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbDateAdded" name="dbFirstName"> -->
+        <date-obj  [(date)]="vendorDetails.dbDateAdded"></date-obj>
       </div>
 
       <div class="form-group col-sm-3">

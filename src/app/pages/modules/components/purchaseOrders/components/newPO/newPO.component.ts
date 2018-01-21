@@ -11,6 +11,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class NewPO {
 
 	@Input() addNewPO;
+	@Input() vendorList;
 	@Output() addNewPOChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 	
 	newPO = {};

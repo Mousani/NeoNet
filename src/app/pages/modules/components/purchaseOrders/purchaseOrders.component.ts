@@ -16,11 +16,16 @@ export class PurchaseOrders {
     addNewPO = false;
     viewPOStatus = false;
     PO = {};
+    vendorDataList = [];
 
     constructor(private service: PurchaseOrdersService,private route : Router ) {
       this.service.getData().subscribe((data) => {
         this.data = data;
-      });;
+      });
+
+      this.service.getVenDorDataData().subscribe((data) => {
+        this.vendorDataList = data;
+      });
 
   }
 

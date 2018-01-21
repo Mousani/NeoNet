@@ -74,8 +74,8 @@
         
         
     </div>
-
-    <new-po [hidden]="!addNewPO"  [(addNewPO)]="addNewPO"></new-po>
+<!-- <router-outlet></router-outlet> -->
+    <new-po [hidden]="!addNewPO"  [(addNewPO)]="addNewPO" [vendorList]="vendorDataList"></new-po>
     <div class="row"  [hidden]="!viewPOStatus"  >
         <div class="col-lg-6 col-md-12">
           <ba-card cardTitle="Purchase Order Details" baCardClass="with-scroll table-panel">

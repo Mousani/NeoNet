@@ -23,7 +23,10 @@
           <div class="form-group col-sm-6">
               <label for="input01">Vendor#</label>
               <select class="form-control" >
-                <option value="" [selected]></option>
+                <!-- <option value="" [selected]></option> -->
+                <!-- <option value="">--Select--</option> -->
+                <option *ngFor="let v of vendorList" [ngValue]="v.dbVendorNumber">{{v.dbVendorNumber}} - {{v.dbCompany}} </option>
+                <option value=""> --Select-- </option>
               </select>
             </div>
     </div>

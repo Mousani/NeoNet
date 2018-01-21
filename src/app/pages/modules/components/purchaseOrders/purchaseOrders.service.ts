@@ -12,4 +12,9 @@ export class PurchaseOrdersService {
         .map((res:Response) => this.dataTableData = res.json()); //records in this case
   }
 
+  getVenDorDataData() {
+    return this.http.get("./assets/json/vendor.json")
+    .map((res:Response) =>  res.json()); 
+    }
+
 }

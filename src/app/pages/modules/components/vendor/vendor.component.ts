@@ -27,8 +27,9 @@ export class VendorComponent implements OnInit {
   
   constructor(private venSer :VendorService,private state :  AppState, private baMenuSer : BaMenuService ) { 
     // this.baMenuSer.menuItems.
-    var myBreadCrumb = document.querySelectorAll('#breadCrumbData')[0];
-    myBreadCrumb.innerHTML = "Purchase Orders / Vendor"
+    // var myBreadCrumb = document.querySelectorAll('#breadCrumbData')[0];
+    // myBreadCrumb.textContent  = "Purchase Orders / Vendor"var myBreadCrumb = document.querySelectorAll('#breadCrumbData')[0];
+    // myBreadCrumb.textContent  = "Purchase Orders / Vendor"
   }
   selVen : any; 
   ngOnInit( ) {
@@ -46,6 +47,13 @@ export class VendorComponent implements OnInit {
     this.viewVendorStatus = true;
     this.selectedVendor = selVen;
     this.selVen = this.selectedVendor;
+  }
+
+  newVendorForAdd = function(){
+    this.viewVendorStatus = false;
+    this.editVendorStatus = true;
+    this.selVen = {}; 
+    this.selVen.dbDateAdded = '';   
   }
 
 }

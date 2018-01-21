@@ -24,7 +24,11 @@ const routes: Routes = [
       { path: 'parts', component: Parts },
       { path: 'quotes', component: Quotes },
       { path: 'parts', component: Parts },
-      { path: 'purchase_orders', component: PurchaseOrders },
+      { path: 'purchase_orders', component: PurchaseOrders,
+      // children:[
+      //   {path:'vendor',component : PurchaseOrders}
+      // ]
+    },
       { path: 'vendor', component: VendorComponent },
     ]
   }
