@@ -20,14 +20,19 @@
               <option value="Hovertechnics, LLC" title="" id="">Hovertechnics, LLC</option>
             </select>
           </div>
-          <div class="form-group col-sm-6">
+          <div class="form-group col-sm-6 auto-c">
               <label for="input01">Vendor#</label>
-              <select class="form-control" >
-                <!-- <option value="" [selected]></option> -->
-                <!-- <option value="">--Select--</option> -->
+              <!-- <select class="form-control" >               
                 <option *ngFor="let v of vendorList" [ngValue]="v.dbVendorNumber">{{v.dbVendorNumber}} - {{v.dbCompany}} </option>
                 <option value=""> --Select-- </option>
-              </select>
+              </select> -->
+              <input [(ngModel)]="dbVendorNumber" class="form-control"  name="dbVendorNumber" ng2-auto-complete 
+              [source]="vendorList"
+              (valueChanged)="valueChanged($event)"
+              placeholder="enter text" 
+              value-property-name="dbVendorNumber"
+              display-property-name="dbCompany"
+              [list-formatter]="autocompleListFormatter" />
             </div>
     </div>
     <div class="row">

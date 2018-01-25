@@ -25,12 +25,11 @@ textarea {
 .ng2-auto-complete > ul{
   color: black !important;
   background-color: aqua !important;;
-  ul {
-    background-color: aqua !important;;
-    // font-size: 12px !important;;
-    // line-height: 15px;
-    // font-weight: #ffffff;
-  }
+ 
+}
+.ng2-auto-complete > ul >li{
+  background: black;
+  color: red !important;
 }
 div.ng2-auto-complete-wrapper {
   width: 100% !important;;
@@ -97,4 +96,50 @@ div.ng2-auto-complete-wrapper {
 .card-header {
   padding: 7px 10px !important;
   height: auto !important;
+}
+
+.ng2-auto-complete {
+  background-color: transparent;
+}
+.ng2-auto-complete > input {
+  outline: none;
+  border: 0;
+  padding: 2px; 
+  box-sizing: border-box;
+  background-clip: content-box;
+}
+
+.ng2-auto-complete > ul {
+  background-color: #fff;
+  margin: 0;
+  width : 100%;
+  overflow-y: auto;
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  animation: slideDown 0.1s;
+}
+.ng2-auto-complete > ul.empty {
+  display: none;
+}
+
+.ng2-auto-complete > ul li {
+  padding: 2px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.ng2-auto-complete > ul li.selected {
+  background-color: #ccc;
+}
+
+.ng2-auto-complete > ul li:last-child {
+  border-bottom: none;
+}
+
+.ng2-auto-complete > ul li:hover {
+  background-color: #ccc;
+}
+.colBlack{
+  color: black;
 }

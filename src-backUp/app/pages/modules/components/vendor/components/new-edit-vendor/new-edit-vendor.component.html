@@ -1,0 +1,92 @@
+<form class="form-inline">
+  <ba-card title="" cardTitle="Create/Edit vendorDetails" class="col-12">  
+    <div class="row">
+      <div class="form-group col-sm-3">
+        <label>Date Added</label>
+        <!-- <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbDateAdded" name="dbFirstName"> -->
+        <date-obj  [(date)]="vendorDetails.dbDateAdded"></date-obj>
+      </div>
+
+      <div class="form-group col-sm-3">
+        <label for="input01">Company</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbCompany" name="dbFirstName">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Contact Name</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbContactName" name="dbLastName">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Business Title</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbBusinessTitle" name="dbCompany">
+      </div>
+    </div>
+    <div class="row">
+      <!-- <div class="form-group col-sm-3">
+        <label for="input01">Address</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbBusinessTitle" name="dbBusinessTitle">
+      </div> -->
+      <div class="form-group col-sm-3">
+        <label for="input01">City</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbCity" name="dbPrimaryEmail">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">State</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbState" name="dbSecondaryEmail">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Country</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbCountry" name="dbWebAddress">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Zip</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbZip" name="dbSource">
+      </div>
+    </div>
+
+    <div class="row">
+  
+      <div class="form-group col-sm-3">
+        <label for="input01">Province</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbProvince" name="dbWhereUse">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Account</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbAccount" name="dbvendorDetailssCompany">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Terms</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbTerms" name="dbHowMuch">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Supplies</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbSupplies" name="dbHowMuch">
+      </div>
+    </div>
+    <div class="row">     
+      <div class="form-group col-sm-3">
+        <label for="input01">Phone</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbPhone" name="dbHowMuch">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Cell/Mobile</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbSecondPhone" name="dbHowMuch">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Fax</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbFax" name="dbHowMuch">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Second Fax</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbSecondFax" name="dbHowMuch">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Email</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbEmail" name="dbHowMuch">
+      </div>
+      <div class="form-group col-sm-3">
+        <label for="input01">Website</label>
+        <input type="text" class="form-control" [(ngModel)]="vendorDetails.dbWebsite" name="dbHowMuch">
+      </div>
+    </div>
+  </ba-card>
+</form>

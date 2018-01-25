@@ -16,3 +16,17 @@
 .td-value {
   width:75%;
 }
+
+.ng2-auto-complete > ul{
+  color: black !important;
+  background-color: aqua !important;;
+  ul {
+    background-color: aqua !important;;
+    // font-size: 12px !important;;
+    // line-height: 15px;
+    // font-weight: #ffffff;
+  }
+}
+div.ng2-auto-complete-wrapper {
+  width: 100% !important;;
+}

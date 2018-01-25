@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 
 
 
@@ -27,8 +28,13 @@ export class NewPO {
 		this.addNewPOChange.emit(this.addNewPO);
 	}
 
-	constructor() {
+	constructor(private _sanitizer: DomSanitizer) {
 	}
+
+	autocompleListFormatter = (data: any) : SafeHtml => {
+		let html = `<span class="colBlack" style="color : black">${data.dbCompany} </span>`;
+		return this._sanitizer.bypassSecurityTrustHtml(html);
+	  }
 
 	clear() {
 		this.newPO = Object.assign({}, this.newPOEmpty);

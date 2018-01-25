@@ -1,0 +1,24 @@
+@import '../../../../theme/sass/conf/conf';
+:host /deep/ .widgets {
+
+    .data-table-container {
+        width: 100%;
+        .panel-heading {
+            margin-top: 25px;
+        }
+    }
+    mfdefaultsorter {
+        font-weight: bolder;
+        color: black;
+    }
+
+    .right {
+        float :right;
+    }
+}
+td a {
+    color: white;
+}
+td a:hover {
+    text-decoration: underline;
+}
