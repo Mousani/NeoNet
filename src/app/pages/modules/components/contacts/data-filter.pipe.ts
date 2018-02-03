@@ -6,14 +6,21 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class DataFilterPipe implements PipeTransform {
 
-    transform(array: any[], query: string): any {
+    transform(array: any[], query: string, field : string): any {
         if (query) {
-            return _.filter(array, row=> 
-                (row.dbContactNumber.toString()).toLowerCase().indexOf(query.toLowerCase()) > -1 
-                || (row.dbFirstName).toLowerCase().indexOf(query.toLowerCase()) > -1
-                || (row.dbLastName).toLowerCase().indexOf(query.toLowerCase()) > -1 
-                || row.dbCompany.toLowerCase().indexOf(query.toLowerCase()) > -1 
-                || row.dbPrimaryEmail.toLowerCase().indexOf(query.toLowerCase()) > -1);
+            if(field == ''){
+                return _.filter(array, row=> 
+                    (row.dbContactNumber.toString()).toLowerCase().indexOf(query.toLowerCase()) > -1 
+                    || (row.dbFirstName).toLowerCase().indexOf(query.toLowerCase()) > -1
+                    || (row.dbLastName).toLowerCase().indexOf(query.toLowerCase()) > -1 
+                    || row.dbCompany.toLowerCase().indexOf(query.toLowerCase()) > -1 
+                    || row.dbPrimaryEmail.toLowerCase().indexOf(query.toLowerCase()) > -1);
+                }
+                else{
+                    return  _.filter(array, row=> 
+                        (row[field].toString()).toLowerCase().indexOf(query.toLowerCase()) > -1);
+           
+                }
         }
         return array;
     }

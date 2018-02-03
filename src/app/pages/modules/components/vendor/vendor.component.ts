@@ -31,7 +31,7 @@ export class VendorComponent implements OnInit {
     // myBreadCrumb.textContent  = "Purchase Orders / Vendor"var myBreadCrumb = document.querySelectorAll('#breadCrumbData')[0];
     // myBreadCrumb.textContent  = "Purchase Orders / Vendor"
   }
-  selVen : any; 
+  selVen : any = {}; 
   ngOnInit( ) {
     this.venSer.getData()
     .subscribe(data =>this.data = data );

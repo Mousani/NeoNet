@@ -9,7 +9,11 @@ export class NewEditVendorComponent implements OnInit {
 
 @Input() vendorDetails;
 
-  constructor() { }
+  constructor() {
+    // if(this.vendorDetails == undefined || this.vendorDetails == null){
+    //     this.vendorDetails = {};
+    // }
+   }
 
   ngOnInit() {
   }

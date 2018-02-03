@@ -1,1 +1,0 @@
-export * from './viewInvoice.component';

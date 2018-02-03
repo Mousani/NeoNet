@@ -17,4 +17,9 @@ export class PurchaseOrdersService {
     .map((res:Response) =>  res.json()); 
     }
 
+    getshippingOpt() {
+      return this.http.get("./assets/json/shippingOpt.json")
+      .map((res:Response) =>  res.json()); 
+      }
+
 }

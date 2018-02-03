@@ -27,6 +27,8 @@ export class PurchaseOrders {
         this.vendorDataList = data;
       });
 
+        
+
   }
 
   public setPO = (PO) => {  

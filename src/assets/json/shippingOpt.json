@@ -1,0 +1,7 @@
+	      [
+            { "removeFlag":false,"shippingOptData" :"AIR FREIGHT","webOption":false},
+			{ "removeFlag":true,"shippingOptData" :"AIR MAIL","webOption":true},
+			{ "removeFlag":true,"shippingOptData" :"COMMON CARRIER","webOption":true},
+			{ "removeFlag":false,"shippingOptData" :"COMPANY TRUCK","webOption":false},
+            {"removeFlag":false,"shippingOptData" :"CONTAINER","webOption":false}
+          ]

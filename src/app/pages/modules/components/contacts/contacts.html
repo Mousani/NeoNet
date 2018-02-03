@@ -40,7 +40,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">User information</div>
 
-                <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
+                <table class="table table-striped" [mfData]="data | dataFilter : filterQuery : searchFileds" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
                     <thead>
                         <tr>
                             <th colspan="4" class="col-12">
@@ -54,6 +54,15 @@
                                         <label class="label-control">&nbsp;&nbsp;&nbsp;</label>
                                         <button type="submit" class="btn btn-primary form-control " (click)="addNew = !addNew" >Add New</button>
                                     </div>
+                                    <div class="col-sm-2 serFiled">
+                                            <label class="label-control right">Fields to search : </label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <select [(ngModel)]="searchFileds" name="searchFileds" class="form-control input-sm">
+                                            <option *ngFor=" let ser of searChFiled" [value]="ser.value">{{ser.filed}}</option>
+                                        </select>
+                                    </div>
+                                   
                                  </div>
                             </th>
                         </tr>

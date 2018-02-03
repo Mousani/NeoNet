@@ -1,13 +1,14 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 
-
+import {PurchaseOrdersService} from '../../purchaseOrders.service';
 
 
 @Component({
 	selector: 'new-po',
 	styleUrls: ['./newPO.scss'],
 	templateUrl: './newPO.html',
+	providers : [PurchaseOrdersService]
 })
 export class NewPO {
 
@@ -16,19 +17,55 @@ export class NewPO {
 	@Output() addNewPOChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 	
 	newPO = {};
+	shipingList =[];
 
 	ngOnChanges() {
 	}
 
 	submitNewPO(){
 	}
-
+	addShipingData = {};
+	shipMethodViewFun = function(){
+		this.shipMethodView = !this.shipMethodView;
+	}
 	createToggle() {
 		this.addNewPO = !this.addNewPO;
 		this.addNewPOChange.emit(this.addNewPO);
 	}
+	addShipping = function(data){
+		if(data.shippingOptData == undefined || data.shippingOptData ==  null || data.shippingOptData == ''){
+			alert('Please Enter shipping Data');			
+		}
+		else{
+			var newRow = {shippingOptData :'',removeFlag: false,webOption: false};
+			newRow.shippingOptData = data.shippingOptData ? data.shippingOptData : '';
+			newRow.removeFlag = data.removeFlag ? data.removeFlag : false;
+			newRow.webOption = data.webOption ? data.webOption : false;
+			this.shipingList.push( newRow);
+			this.addShipingData = {};
+		}
+	}
+	submitChanges = function(){
+		this.delList =[];   //Delte ele Indexes  
+		this.shipingList.forEach(
+		  (ele,index) =>{
+			if(ele.removeFlag){
+			  this.delList.push(index);        
+			}
+		  }
+		)	
+		this.delList.forEach((element,index) => {
+		  var i = element-index;  //geting index of delete element
+		  this.shipingList.splice(i,1);  //Deleteting the element from List
+		});
+	}
 
-	constructor(private _sanitizer: DomSanitizer) {
+	constructor(private _sanitizer: DomSanitizer,private POSer : PurchaseOrdersService) {
+
+		this.POSer.getshippingOpt().subscribe((data) => {
+			this.shipingList = data;
+			});
+
 	}
 
 	autocompleListFormatter = (data: any) : SafeHtml => {
@@ -41,7 +78,6 @@ export class NewPO {
 		
 	}
 	
-
 	isRemember: boolean = false;
 
 	newPOEmpty = {
